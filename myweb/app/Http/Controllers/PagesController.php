@@ -21,7 +21,8 @@ class PagesController extends Controller
     {
         $prdata = [
             'telefon'=>'iPhone',
-            'tv'=>'LCD Samsung'
+            'tv'=>'LCD Samsung',
+            'agd'=>'Pralka'
         ];
 
         return view('layouts.products')->with('prdata',$prdata);
