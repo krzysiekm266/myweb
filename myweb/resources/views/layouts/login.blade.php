@@ -1,5 +1,5 @@
 <x-application.application>
-    Login
+    <x-application.content-title>Login</x-application.content-title>
 
     <a href="{{ route('users_list') }}">users list</a>
     @isset($users)
