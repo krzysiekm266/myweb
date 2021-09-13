@@ -3,44 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Route;
 
 class PagesController extends Controller
 {
     /**
-     *
+     *Welcome/index page
      */
     public function index()
     {
-       return view('layouts.home');
+       return view('index');
     }
 
     /**
-     *
-     */
-    public function products()
+    *Admin panel page
+    */
+    public function panel()
     {
-        $prdata = [
-            'telefon'=>'iPhone',
-            'tv'=>'LCD Samsung',
-            'agd'=>'Pralka'
-        ];
-
-        return view('layouts.products')->with('prdata',$prdata);
-
+        return view('panel');
     }
 
     /**
-     *
+     *News page
      */
-    public function about()
+    public function news()
     {
-     return view('layouts.about');
+
+        return view('news');
+
     }
-    /**
-     *
-     */
-    public function login()
-    {
-        return view('layouts.login');
-    }
+
+
+
+
 }

@@ -1,7 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\UserController;
+use Illuminate\Routing\Route as RoutingRoute;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +17,15 @@ use App\Http\Controllers\PagesController;
 */
 
 
-Route::get('/', [PagesController::class,'index'])->name('index');
-Route::get('/products', [PagesController::class,'products'])->name('products');
-Route::get('/about', [PagesController::class,'about'])->name('about');
-Route::get('/login', [PagesController::class,'login'])->name('login');
+Route::get('/',[PagesController::class,'index'])->name('index');
+Route::get('/news',[PagesController::class,'news'])->name('news');
+Route::middleware(['auth'])->get('/panel',[PagesController::class,'panel'])->name('panel');
+
+
+
+Route::middleware(['auth'])->post('/change-email',[UserController::class,'update'])->name('change_email');
+
+require __DIR__.'/auth.php';
+
 
 

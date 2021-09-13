@@ -1,22 +1,29 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  purge: [
-    './resources/views/**/*.blade.php',
-    './resources/css/**/*.css',
-  ],
-  theme: {
-    extend: {}
-  },
-  variants: {
-    extend: {
-        border:['hover'],
-        borderWidth: ['hover'],
-        borderRadius: ['hover'],
-        borderColor: ['hover'],
-    }
-  },
-  plugins: [
-    require('@tailwindcss/ui'),
-    require('@tailwindcss/forms')
-  ]
+    purge: [
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+        './storage/framework/views/*.php',
+        './resources/views/**/*.blade.php',
+    ],
+
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+            },
+            backgroundImage: theme => ({
+
+                'main': "url('/storage/images/background3.jpg')",
+               })
+        },
+    },
+
+    variants: {
+        extend: {
+            opacity: ['disabled'],
+        },
+    },
+
+    plugins: [require('@tailwindcss/forms')],
 };
