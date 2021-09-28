@@ -12,11 +12,29 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            fontSize:{
+                'xxs':'.65rem',
+
+            },
             backgroundImage: theme => ({
 
                 'main': "url('/storage/images/background3.jpg')",
-               })
+            }),
+            inset: {
+                '33':'132px',
+                '3':'12px',
+            },
+            width: {
+                '13':'52px',
+                '39':'156px',
+                '97':'800px'
+            },
+            height:{
+                '13':'52px',
+            },
+
         },
+
     },
 
     variants: {

@@ -15,17 +15,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+require __DIR__.'/breeze/auth.php';
+require __DIR__.'/web/panel.php';
 
 Route::get('/',[PagesController::class,'index'])->name('index');
 Route::get('/news',[PagesController::class,'news'])->name('news');
-Route::middleware(['auth'])->get('/panel',[PagesController::class,'panel'])->name('panel');
+Route::get('/about',[PagesController::class,'about'])->name('about');
 
-
-
-Route::middleware(['auth'])->post('/change-email',[UserController::class,'update'])->name('change_email');
-
-require __DIR__.'/auth.php';
 
 
 

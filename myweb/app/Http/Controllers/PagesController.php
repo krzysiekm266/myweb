@@ -13,7 +13,7 @@ class PagesController extends Controller
      */
     public function index()
     {
-       return view('index');
+       return view('pages.index');
     }
 
     /**
@@ -21,7 +21,7 @@ class PagesController extends Controller
     */
     public function panel()
     {
-        return view('panel');
+        return view('pages.panel');
     }
 
     /**
@@ -30,11 +30,27 @@ class PagesController extends Controller
     public function news()
     {
 
-        return view('news');
+        return view('pages.news');
 
     }
+    /**
+     *News page
+     */
+    public function about()
+    {
 
+        return view('pages.about');
 
+    }
+    /************************************************************
+     *News edit  page
+     */
+    public function editNews()
+    {
+
+        return view('pages.panel-news-editor');
+
+    }
 
 
 }

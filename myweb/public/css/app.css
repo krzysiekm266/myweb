@@ -921,10 +921,10 @@ select {
 }
 
 .inset-3 {
-  top: 0.75rem;
-  right: 0.75rem;
-  bottom: 0.75rem;
-  left: 0.75rem;
+  top: 12px;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
 }
 
 .inset-4 {
@@ -1030,6 +1030,13 @@ select {
   right: 8rem;
   bottom: 8rem;
   left: 8rem;
+}
+
+.inset-33 {
+  top: 132px;
+  right: 132px;
+  bottom: 132px;
+  left: 132px;
 }
 
 .inset-36 {
@@ -1510,8 +1517,8 @@ select {
 }
 
 .inset-x-3 {
-  left: 0.75rem;
-  right: 0.75rem;
+  left: 12px;
+  right: 12px;
 }
 
 .inset-x-4 {
@@ -1587,6 +1594,11 @@ select {
 .inset-x-32 {
   left: 8rem;
   right: 8rem;
+}
+
+.inset-x-33 {
+  left: 132px;
+  right: 132px;
 }
 
 .inset-x-36 {
@@ -1935,8 +1947,8 @@ select {
 }
 
 .inset-y-3 {
-  top: 0.75rem;
-  bottom: 0.75rem;
+  top: 12px;
+  bottom: 12px;
 }
 
 .inset-y-4 {
@@ -2012,6 +2024,11 @@ select {
 .inset-y-32 {
   top: 8rem;
   bottom: 8rem;
+}
+
+.inset-y-33 {
+  top: 132px;
+  bottom: 132px;
 }
 
 .inset-y-36 {
@@ -2357,7 +2374,7 @@ select {
 }
 
 .top-3 {
-  top: 0.75rem;
+  top: 12px;
 }
 
 .top-4 {
@@ -2418,6 +2435,10 @@ select {
 
 .top-32 {
   top: 8rem;
+}
+
+.top-33 {
+  top: 132px;
 }
 
 .top-36 {
@@ -2697,7 +2718,7 @@ select {
 }
 
 .right-3 {
-  right: 0.75rem;
+  right: 12px;
 }
 
 .right-4 {
@@ -2758,6 +2779,10 @@ select {
 
 .right-32 {
   right: 8rem;
+}
+
+.right-33 {
+  right: 132px;
 }
 
 .right-36 {
@@ -3037,7 +3062,7 @@ select {
 }
 
 .bottom-3 {
-  bottom: 0.75rem;
+  bottom: 12px;
 }
 
 .bottom-4 {
@@ -3098,6 +3123,10 @@ select {
 
 .bottom-32 {
   bottom: 8rem;
+}
+
+.bottom-33 {
+  bottom: 132px;
 }
 
 .bottom-36 {
@@ -3377,7 +3406,7 @@ select {
 }
 
 .left-3 {
-  left: 0.75rem;
+  left: 12px;
 }
 
 .left-4 {
@@ -3438,6 +3467,10 @@ select {
 
 .left-32 {
   left: 8rem;
+}
+
+.left-33 {
+  left: 132px;
 }
 
 .left-36 {
@@ -6422,6 +6455,10 @@ select {
   height: 3rem;
 }
 
+.h-13 {
+  height: 52px;
+}
+
 .h-14 {
   height: 3.5rem;
 }
@@ -6794,6 +6831,10 @@ select {
   width: 3rem;
 }
 
+.w-13 {
+  width: 52px;
+}
+
 .w-14 {
   width: 3.5rem;
 }
@@ -6820,6 +6861,10 @@ select {
 
 .w-36 {
   width: 9rem;
+}
+
+.w-39 {
+  width: 156px;
 }
 
 .w-40 {
@@ -6860,6 +6905,10 @@ select {
 
 .w-96 {
   width: 24rem;
+}
+
+.w-97 {
+  width: 800px;
 }
 
 .w-auto {
@@ -22609,6 +22658,10 @@ select {
   line-height: 1;
 }
 
+.text-xxs {
+  font-size: .65rem;
+}
+
 .font-thin {
   font-weight: 100;
 }
@@ -32290,10 +32343,10 @@ select {
   }
 
   .sm\:inset-3 {
-    top: 0.75rem;
-    right: 0.75rem;
-    bottom: 0.75rem;
-    left: 0.75rem;
+    top: 12px;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
   }
 
   .sm\:inset-4 {
@@ -32399,6 +32452,13 @@ select {
     right: 8rem;
     bottom: 8rem;
     left: 8rem;
+  }
+
+  .sm\:inset-33 {
+    top: 132px;
+    right: 132px;
+    bottom: 132px;
+    left: 132px;
   }
 
   .sm\:inset-36 {
@@ -32879,8 +32939,8 @@ select {
   }
 
   .sm\:inset-x-3 {
-    left: 0.75rem;
-    right: 0.75rem;
+    left: 12px;
+    right: 12px;
   }
 
   .sm\:inset-x-4 {
@@ -32956,6 +33016,11 @@ select {
   .sm\:inset-x-32 {
     left: 8rem;
     right: 8rem;
+  }
+
+  .sm\:inset-x-33 {
+    left: 132px;
+    right: 132px;
   }
 
   .sm\:inset-x-36 {
@@ -33304,8 +33369,8 @@ select {
   }
 
   .sm\:inset-y-3 {
-    top: 0.75rem;
-    bottom: 0.75rem;
+    top: 12px;
+    bottom: 12px;
   }
 
   .sm\:inset-y-4 {
@@ -33381,6 +33446,11 @@ select {
   .sm\:inset-y-32 {
     top: 8rem;
     bottom: 8rem;
+  }
+
+  .sm\:inset-y-33 {
+    top: 132px;
+    bottom: 132px;
   }
 
   .sm\:inset-y-36 {
@@ -33726,7 +33796,7 @@ select {
   }
 
   .sm\:top-3 {
-    top: 0.75rem;
+    top: 12px;
   }
 
   .sm\:top-4 {
@@ -33787,6 +33857,10 @@ select {
 
   .sm\:top-32 {
     top: 8rem;
+  }
+
+  .sm\:top-33 {
+    top: 132px;
   }
 
   .sm\:top-36 {
@@ -34066,7 +34140,7 @@ select {
   }
 
   .sm\:right-3 {
-    right: 0.75rem;
+    right: 12px;
   }
 
   .sm\:right-4 {
@@ -34127,6 +34201,10 @@ select {
 
   .sm\:right-32 {
     right: 8rem;
+  }
+
+  .sm\:right-33 {
+    right: 132px;
   }
 
   .sm\:right-36 {
@@ -34406,7 +34484,7 @@ select {
   }
 
   .sm\:bottom-3 {
-    bottom: 0.75rem;
+    bottom: 12px;
   }
 
   .sm\:bottom-4 {
@@ -34467,6 +34545,10 @@ select {
 
   .sm\:bottom-32 {
     bottom: 8rem;
+  }
+
+  .sm\:bottom-33 {
+    bottom: 132px;
   }
 
   .sm\:bottom-36 {
@@ -34746,7 +34828,7 @@ select {
   }
 
   .sm\:left-3 {
-    left: 0.75rem;
+    left: 12px;
   }
 
   .sm\:left-4 {
@@ -34807,6 +34889,10 @@ select {
 
   .sm\:left-32 {
     left: 8rem;
+  }
+
+  .sm\:left-33 {
+    left: 132px;
   }
 
   .sm\:left-36 {
@@ -37791,6 +37877,10 @@ select {
     height: 3rem;
   }
 
+  .sm\:h-13 {
+    height: 52px;
+  }
+
   .sm\:h-14 {
     height: 3.5rem;
   }
@@ -38163,6 +38253,10 @@ select {
     width: 3rem;
   }
 
+  .sm\:w-13 {
+    width: 52px;
+  }
+
   .sm\:w-14 {
     width: 3.5rem;
   }
@@ -38189,6 +38283,10 @@ select {
 
   .sm\:w-36 {
     width: 9rem;
+  }
+
+  .sm\:w-39 {
+    width: 156px;
   }
 
   .sm\:w-40 {
@@ -38229,6 +38327,10 @@ select {
 
   .sm\:w-96 {
     width: 24rem;
+  }
+
+  .sm\:w-97 {
+    width: 800px;
   }
 
   .sm\:w-auto {
@@ -53912,6 +54014,10 @@ select {
     line-height: 1;
   }
 
+  .sm\:text-xxs {
+    font-size: .65rem;
+  }
+
   .sm\:font-thin {
     font-weight: 100;
   }
@@ -63581,10 +63687,10 @@ select {
   }
 
   .md\:inset-3 {
-    top: 0.75rem;
-    right: 0.75rem;
-    bottom: 0.75rem;
-    left: 0.75rem;
+    top: 12px;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
   }
 
   .md\:inset-4 {
@@ -63690,6 +63796,13 @@ select {
     right: 8rem;
     bottom: 8rem;
     left: 8rem;
+  }
+
+  .md\:inset-33 {
+    top: 132px;
+    right: 132px;
+    bottom: 132px;
+    left: 132px;
   }
 
   .md\:inset-36 {
@@ -64170,8 +64283,8 @@ select {
   }
 
   .md\:inset-x-3 {
-    left: 0.75rem;
-    right: 0.75rem;
+    left: 12px;
+    right: 12px;
   }
 
   .md\:inset-x-4 {
@@ -64247,6 +64360,11 @@ select {
   .md\:inset-x-32 {
     left: 8rem;
     right: 8rem;
+  }
+
+  .md\:inset-x-33 {
+    left: 132px;
+    right: 132px;
   }
 
   .md\:inset-x-36 {
@@ -64595,8 +64713,8 @@ select {
   }
 
   .md\:inset-y-3 {
-    top: 0.75rem;
-    bottom: 0.75rem;
+    top: 12px;
+    bottom: 12px;
   }
 
   .md\:inset-y-4 {
@@ -64672,6 +64790,11 @@ select {
   .md\:inset-y-32 {
     top: 8rem;
     bottom: 8rem;
+  }
+
+  .md\:inset-y-33 {
+    top: 132px;
+    bottom: 132px;
   }
 
   .md\:inset-y-36 {
@@ -65017,7 +65140,7 @@ select {
   }
 
   .md\:top-3 {
-    top: 0.75rem;
+    top: 12px;
   }
 
   .md\:top-4 {
@@ -65078,6 +65201,10 @@ select {
 
   .md\:top-32 {
     top: 8rem;
+  }
+
+  .md\:top-33 {
+    top: 132px;
   }
 
   .md\:top-36 {
@@ -65357,7 +65484,7 @@ select {
   }
 
   .md\:right-3 {
-    right: 0.75rem;
+    right: 12px;
   }
 
   .md\:right-4 {
@@ -65418,6 +65545,10 @@ select {
 
   .md\:right-32 {
     right: 8rem;
+  }
+
+  .md\:right-33 {
+    right: 132px;
   }
 
   .md\:right-36 {
@@ -65697,7 +65828,7 @@ select {
   }
 
   .md\:bottom-3 {
-    bottom: 0.75rem;
+    bottom: 12px;
   }
 
   .md\:bottom-4 {
@@ -65758,6 +65889,10 @@ select {
 
   .md\:bottom-32 {
     bottom: 8rem;
+  }
+
+  .md\:bottom-33 {
+    bottom: 132px;
   }
 
   .md\:bottom-36 {
@@ -66037,7 +66172,7 @@ select {
   }
 
   .md\:left-3 {
-    left: 0.75rem;
+    left: 12px;
   }
 
   .md\:left-4 {
@@ -66098,6 +66233,10 @@ select {
 
   .md\:left-32 {
     left: 8rem;
+  }
+
+  .md\:left-33 {
+    left: 132px;
   }
 
   .md\:left-36 {
@@ -69082,6 +69221,10 @@ select {
     height: 3rem;
   }
 
+  .md\:h-13 {
+    height: 52px;
+  }
+
   .md\:h-14 {
     height: 3.5rem;
   }
@@ -69454,6 +69597,10 @@ select {
     width: 3rem;
   }
 
+  .md\:w-13 {
+    width: 52px;
+  }
+
   .md\:w-14 {
     width: 3.5rem;
   }
@@ -69480,6 +69627,10 @@ select {
 
   .md\:w-36 {
     width: 9rem;
+  }
+
+  .md\:w-39 {
+    width: 156px;
   }
 
   .md\:w-40 {
@@ -69520,6 +69671,10 @@ select {
 
   .md\:w-96 {
     width: 24rem;
+  }
+
+  .md\:w-97 {
+    width: 800px;
   }
 
   .md\:w-auto {
@@ -85203,6 +85358,10 @@ select {
     line-height: 1;
   }
 
+  .md\:text-xxs {
+    font-size: .65rem;
+  }
+
   .md\:font-thin {
     font-weight: 100;
   }
@@ -94872,10 +95031,10 @@ select {
   }
 
   .lg\:inset-3 {
-    top: 0.75rem;
-    right: 0.75rem;
-    bottom: 0.75rem;
-    left: 0.75rem;
+    top: 12px;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
   }
 
   .lg\:inset-4 {
@@ -94981,6 +95140,13 @@ select {
     right: 8rem;
     bottom: 8rem;
     left: 8rem;
+  }
+
+  .lg\:inset-33 {
+    top: 132px;
+    right: 132px;
+    bottom: 132px;
+    left: 132px;
   }
 
   .lg\:inset-36 {
@@ -95461,8 +95627,8 @@ select {
   }
 
   .lg\:inset-x-3 {
-    left: 0.75rem;
-    right: 0.75rem;
+    left: 12px;
+    right: 12px;
   }
 
   .lg\:inset-x-4 {
@@ -95538,6 +95704,11 @@ select {
   .lg\:inset-x-32 {
     left: 8rem;
     right: 8rem;
+  }
+
+  .lg\:inset-x-33 {
+    left: 132px;
+    right: 132px;
   }
 
   .lg\:inset-x-36 {
@@ -95886,8 +96057,8 @@ select {
   }
 
   .lg\:inset-y-3 {
-    top: 0.75rem;
-    bottom: 0.75rem;
+    top: 12px;
+    bottom: 12px;
   }
 
   .lg\:inset-y-4 {
@@ -95963,6 +96134,11 @@ select {
   .lg\:inset-y-32 {
     top: 8rem;
     bottom: 8rem;
+  }
+
+  .lg\:inset-y-33 {
+    top: 132px;
+    bottom: 132px;
   }
 
   .lg\:inset-y-36 {
@@ -96308,7 +96484,7 @@ select {
   }
 
   .lg\:top-3 {
-    top: 0.75rem;
+    top: 12px;
   }
 
   .lg\:top-4 {
@@ -96369,6 +96545,10 @@ select {
 
   .lg\:top-32 {
     top: 8rem;
+  }
+
+  .lg\:top-33 {
+    top: 132px;
   }
 
   .lg\:top-36 {
@@ -96648,7 +96828,7 @@ select {
   }
 
   .lg\:right-3 {
-    right: 0.75rem;
+    right: 12px;
   }
 
   .lg\:right-4 {
@@ -96709,6 +96889,10 @@ select {
 
   .lg\:right-32 {
     right: 8rem;
+  }
+
+  .lg\:right-33 {
+    right: 132px;
   }
 
   .lg\:right-36 {
@@ -96988,7 +97172,7 @@ select {
   }
 
   .lg\:bottom-3 {
-    bottom: 0.75rem;
+    bottom: 12px;
   }
 
   .lg\:bottom-4 {
@@ -97049,6 +97233,10 @@ select {
 
   .lg\:bottom-32 {
     bottom: 8rem;
+  }
+
+  .lg\:bottom-33 {
+    bottom: 132px;
   }
 
   .lg\:bottom-36 {
@@ -97328,7 +97516,7 @@ select {
   }
 
   .lg\:left-3 {
-    left: 0.75rem;
+    left: 12px;
   }
 
   .lg\:left-4 {
@@ -97389,6 +97577,10 @@ select {
 
   .lg\:left-32 {
     left: 8rem;
+  }
+
+  .lg\:left-33 {
+    left: 132px;
   }
 
   .lg\:left-36 {
@@ -100373,6 +100565,10 @@ select {
     height: 3rem;
   }
 
+  .lg\:h-13 {
+    height: 52px;
+  }
+
   .lg\:h-14 {
     height: 3.5rem;
   }
@@ -100745,6 +100941,10 @@ select {
     width: 3rem;
   }
 
+  .lg\:w-13 {
+    width: 52px;
+  }
+
   .lg\:w-14 {
     width: 3.5rem;
   }
@@ -100771,6 +100971,10 @@ select {
 
   .lg\:w-36 {
     width: 9rem;
+  }
+
+  .lg\:w-39 {
+    width: 156px;
   }
 
   .lg\:w-40 {
@@ -100811,6 +101015,10 @@ select {
 
   .lg\:w-96 {
     width: 24rem;
+  }
+
+  .lg\:w-97 {
+    width: 800px;
   }
 
   .lg\:w-auto {
@@ -116494,6 +116702,10 @@ select {
     line-height: 1;
   }
 
+  .lg\:text-xxs {
+    font-size: .65rem;
+  }
+
   .lg\:font-thin {
     font-weight: 100;
   }
@@ -126163,10 +126375,10 @@ select {
   }
 
   .xl\:inset-3 {
-    top: 0.75rem;
-    right: 0.75rem;
-    bottom: 0.75rem;
-    left: 0.75rem;
+    top: 12px;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
   }
 
   .xl\:inset-4 {
@@ -126272,6 +126484,13 @@ select {
     right: 8rem;
     bottom: 8rem;
     left: 8rem;
+  }
+
+  .xl\:inset-33 {
+    top: 132px;
+    right: 132px;
+    bottom: 132px;
+    left: 132px;
   }
 
   .xl\:inset-36 {
@@ -126752,8 +126971,8 @@ select {
   }
 
   .xl\:inset-x-3 {
-    left: 0.75rem;
-    right: 0.75rem;
+    left: 12px;
+    right: 12px;
   }
 
   .xl\:inset-x-4 {
@@ -126829,6 +127048,11 @@ select {
   .xl\:inset-x-32 {
     left: 8rem;
     right: 8rem;
+  }
+
+  .xl\:inset-x-33 {
+    left: 132px;
+    right: 132px;
   }
 
   .xl\:inset-x-36 {
@@ -127177,8 +127401,8 @@ select {
   }
 
   .xl\:inset-y-3 {
-    top: 0.75rem;
-    bottom: 0.75rem;
+    top: 12px;
+    bottom: 12px;
   }
 
   .xl\:inset-y-4 {
@@ -127254,6 +127478,11 @@ select {
   .xl\:inset-y-32 {
     top: 8rem;
     bottom: 8rem;
+  }
+
+  .xl\:inset-y-33 {
+    top: 132px;
+    bottom: 132px;
   }
 
   .xl\:inset-y-36 {
@@ -127599,7 +127828,7 @@ select {
   }
 
   .xl\:top-3 {
-    top: 0.75rem;
+    top: 12px;
   }
 
   .xl\:top-4 {
@@ -127660,6 +127889,10 @@ select {
 
   .xl\:top-32 {
     top: 8rem;
+  }
+
+  .xl\:top-33 {
+    top: 132px;
   }
 
   .xl\:top-36 {
@@ -127939,7 +128172,7 @@ select {
   }
 
   .xl\:right-3 {
-    right: 0.75rem;
+    right: 12px;
   }
 
   .xl\:right-4 {
@@ -128000,6 +128233,10 @@ select {
 
   .xl\:right-32 {
     right: 8rem;
+  }
+
+  .xl\:right-33 {
+    right: 132px;
   }
 
   .xl\:right-36 {
@@ -128279,7 +128516,7 @@ select {
   }
 
   .xl\:bottom-3 {
-    bottom: 0.75rem;
+    bottom: 12px;
   }
 
   .xl\:bottom-4 {
@@ -128340,6 +128577,10 @@ select {
 
   .xl\:bottom-32 {
     bottom: 8rem;
+  }
+
+  .xl\:bottom-33 {
+    bottom: 132px;
   }
 
   .xl\:bottom-36 {
@@ -128619,7 +128860,7 @@ select {
   }
 
   .xl\:left-3 {
-    left: 0.75rem;
+    left: 12px;
   }
 
   .xl\:left-4 {
@@ -128680,6 +128921,10 @@ select {
 
   .xl\:left-32 {
     left: 8rem;
+  }
+
+  .xl\:left-33 {
+    left: 132px;
   }
 
   .xl\:left-36 {
@@ -131664,6 +131909,10 @@ select {
     height: 3rem;
   }
 
+  .xl\:h-13 {
+    height: 52px;
+  }
+
   .xl\:h-14 {
     height: 3.5rem;
   }
@@ -132036,6 +132285,10 @@ select {
     width: 3rem;
   }
 
+  .xl\:w-13 {
+    width: 52px;
+  }
+
   .xl\:w-14 {
     width: 3.5rem;
   }
@@ -132062,6 +132315,10 @@ select {
 
   .xl\:w-36 {
     width: 9rem;
+  }
+
+  .xl\:w-39 {
+    width: 156px;
   }
 
   .xl\:w-40 {
@@ -132102,6 +132359,10 @@ select {
 
   .xl\:w-96 {
     width: 24rem;
+  }
+
+  .xl\:w-97 {
+    width: 800px;
   }
 
   .xl\:w-auto {
@@ -147785,6 +148046,10 @@ select {
     line-height: 1;
   }
 
+  .xl\:text-xxs {
+    font-size: .65rem;
+  }
+
   .xl\:font-thin {
     font-weight: 100;
   }
@@ -157454,10 +157719,10 @@ select {
   }
 
   .\32xl\:inset-3 {
-    top: 0.75rem;
-    right: 0.75rem;
-    bottom: 0.75rem;
-    left: 0.75rem;
+    top: 12px;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
   }
 
   .\32xl\:inset-4 {
@@ -157563,6 +157828,13 @@ select {
     right: 8rem;
     bottom: 8rem;
     left: 8rem;
+  }
+
+  .\32xl\:inset-33 {
+    top: 132px;
+    right: 132px;
+    bottom: 132px;
+    left: 132px;
   }
 
   .\32xl\:inset-36 {
@@ -158043,8 +158315,8 @@ select {
   }
 
   .\32xl\:inset-x-3 {
-    left: 0.75rem;
-    right: 0.75rem;
+    left: 12px;
+    right: 12px;
   }
 
   .\32xl\:inset-x-4 {
@@ -158120,6 +158392,11 @@ select {
   .\32xl\:inset-x-32 {
     left: 8rem;
     right: 8rem;
+  }
+
+  .\32xl\:inset-x-33 {
+    left: 132px;
+    right: 132px;
   }
 
   .\32xl\:inset-x-36 {
@@ -158468,8 +158745,8 @@ select {
   }
 
   .\32xl\:inset-y-3 {
-    top: 0.75rem;
-    bottom: 0.75rem;
+    top: 12px;
+    bottom: 12px;
   }
 
   .\32xl\:inset-y-4 {
@@ -158545,6 +158822,11 @@ select {
   .\32xl\:inset-y-32 {
     top: 8rem;
     bottom: 8rem;
+  }
+
+  .\32xl\:inset-y-33 {
+    top: 132px;
+    bottom: 132px;
   }
 
   .\32xl\:inset-y-36 {
@@ -158890,7 +159172,7 @@ select {
   }
 
   .\32xl\:top-3 {
-    top: 0.75rem;
+    top: 12px;
   }
 
   .\32xl\:top-4 {
@@ -158951,6 +159233,10 @@ select {
 
   .\32xl\:top-32 {
     top: 8rem;
+  }
+
+  .\32xl\:top-33 {
+    top: 132px;
   }
 
   .\32xl\:top-36 {
@@ -159230,7 +159516,7 @@ select {
   }
 
   .\32xl\:right-3 {
-    right: 0.75rem;
+    right: 12px;
   }
 
   .\32xl\:right-4 {
@@ -159291,6 +159577,10 @@ select {
 
   .\32xl\:right-32 {
     right: 8rem;
+  }
+
+  .\32xl\:right-33 {
+    right: 132px;
   }
 
   .\32xl\:right-36 {
@@ -159570,7 +159860,7 @@ select {
   }
 
   .\32xl\:bottom-3 {
-    bottom: 0.75rem;
+    bottom: 12px;
   }
 
   .\32xl\:bottom-4 {
@@ -159631,6 +159921,10 @@ select {
 
   .\32xl\:bottom-32 {
     bottom: 8rem;
+  }
+
+  .\32xl\:bottom-33 {
+    bottom: 132px;
   }
 
   .\32xl\:bottom-36 {
@@ -159910,7 +160204,7 @@ select {
   }
 
   .\32xl\:left-3 {
-    left: 0.75rem;
+    left: 12px;
   }
 
   .\32xl\:left-4 {
@@ -159971,6 +160265,10 @@ select {
 
   .\32xl\:left-32 {
     left: 8rem;
+  }
+
+  .\32xl\:left-33 {
+    left: 132px;
   }
 
   .\32xl\:left-36 {
@@ -162955,6 +163253,10 @@ select {
     height: 3rem;
   }
 
+  .\32xl\:h-13 {
+    height: 52px;
+  }
+
   .\32xl\:h-14 {
     height: 3.5rem;
   }
@@ -163327,6 +163629,10 @@ select {
     width: 3rem;
   }
 
+  .\32xl\:w-13 {
+    width: 52px;
+  }
+
   .\32xl\:w-14 {
     width: 3.5rem;
   }
@@ -163353,6 +163659,10 @@ select {
 
   .\32xl\:w-36 {
     width: 9rem;
+  }
+
+  .\32xl\:w-39 {
+    width: 156px;
   }
 
   .\32xl\:w-40 {
@@ -163393,6 +163703,10 @@ select {
 
   .\32xl\:w-96 {
     width: 24rem;
+  }
+
+  .\32xl\:w-97 {
+    width: 800px;
   }
 
   .\32xl\:w-auto {
@@ -179074,6 +179388,10 @@ select {
   .\32xl\:text-9xl {
     font-size: 8rem;
     line-height: 1;
+  }
+
+  .\32xl\:text-xxs {
+    font-size: .65rem;
   }
 
   .\32xl\:font-thin {

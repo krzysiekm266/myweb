@@ -1,4 +1,4 @@
-@props(['align' => 'right', 'width' => '48', 'contentClasses' => 'py-1 bg-white','isIndex','atr'])
+@props(['align' => 'right', 'width' => '48', 'contentClasses' => 'py-1 bg-white','isIndex','classes'])
 
 @php
 switch ($align) {
@@ -19,10 +19,10 @@ switch ($width) {
         $width = 'w-48';
         break;
 }
-$atr = ($isIndex ?? false)?'w-auto h-auto p-2  rounded-md bg-gray-100' : ' ';
+$classes = ($isIndex ?? false)?'relative w-auto h-auto p-2  rounded-md bg-gray-100' : ' relative';
 @endphp
 
-<div {{ $attributes->merge(['class'=>'relative '.$atr]) }} x-data="{ open: false }" @click.away="open = false" @close.stop="open = false">
+<div {{ $attributes->merge(['class'=>$classes]) }} x-data="{ open: false }" @click.away="open = false" @close.stop="open = false">
     <div @click="open = ! open" class="float-right ">
         {{ $trigger }}
     </div>
