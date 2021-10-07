@@ -1,13 +1,14 @@
 @php
     $pTitle="Welcome";
 @endphp
-<x-app-layout  >
+<x-app-layout>
     <x-slot name="pageTitle">
         {{ $pTitle }}
     </x-slot>
+
     <x-slot name="header">
-        <div class="hidden sm:flex sm:flex-col sm:items-center  w-full">
-            <h2 class="flex  sm:items-center font-semibold text-xl text-gray-800 leading-tight ">
+        <div class="hidden sm:flex sm:flex-col sm:items-center  sm:w-full">
+            <h2 class="flex sm:items-center font-semibold text-xl text-gray-800 leading-tight ">
                 {{ $pTitle }}
             </h2>
         </div>
@@ -44,4 +45,8 @@
             </div>
         </div>
     </div>
+
+    <x-slot name="footer">
+
+     </x-slot>
 </x-app-layout>

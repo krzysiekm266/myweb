@@ -24,9 +24,18 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('pages.panel-news-editor');
+
+         if( $request->user()->name == 'admin')
+         {
+            return view('pages.panel-news-editor',['usr'=> $request->user()->name]);
+         }
+         else
+         {
+            return redirect()->route('login');
+         }
+
     }
 
     /**

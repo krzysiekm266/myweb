@@ -4,7 +4,7 @@
             {{ __('Profile') }}
         </x-panel-nav-link>
 
-        <x-panel-nav-link :href="route('news.create')" :active="request()->is('*news-editor')" >
+        <x-panel-nav-link :href="route('news.create')" :active="request()->is('*news/create')" >
             {{ __('News edit ') }}
         </x-panel-nav-link>
 

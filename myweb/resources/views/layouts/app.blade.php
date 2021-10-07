@@ -18,7 +18,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
 
     </head>
-    <body  class="font-sans antialiased ">
+    <body  class="font-sans antialiased relative">
         <div {{ $attributes->merge(['class'=>'bg-gray-100 min-h-screen ']) }}>
               <!-- Main navigation -->
              <x-navigation>
@@ -49,6 +49,9 @@
             <main class="w-full">
                 {{ $slot }}
             </main>
+            <footer>
+                {{ $footer }}
+            </footer>
         </div>
     </body>
 </html>

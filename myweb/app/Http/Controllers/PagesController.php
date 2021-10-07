@@ -43,10 +43,5 @@ class PagesController extends Controller
 
     }
 
-public function editNews()
-{
-
-    return view('pages.panel-news-editor');
-}
 
 }

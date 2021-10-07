@@ -21,13 +21,20 @@
                 <div class="p-4 bg-white border-b border-gray-200">
                     You're logged in!
                     Welcome to News Editor.
+                    @isset($usr)
+                        {{ $usr }}
+                    @endisset
                 </div>
 
 
 
 
-                </div>
+
             </div>
         </div>
     </div>
+
+    <x-slot name="footer">
+        <x-footer />
+     </x-slot>
 </x-app-layout>
