@@ -8,22 +8,11 @@
             {{ __('News edit ') }}
         </x-panel-nav-link>
 
-        <x-panel-nav-link href="" :active="request()->is('news-edit')" >
+        {{-- <x-panel-nav-link href="" :active="request()->is('news-edit')" >
             {{ __('panel link ') }}
-        </x-panel-nav-link>
+        </x-panel-nav-link> --}}
 
-        <x-panel-nav-link href="" :active="request()->is('news-edit')" >
-            {{ __('panel link ') }}
-        </x-panel-nav-link>
 
-        <x-panel-nav-link href="" :active="request()->is('news-edit')" >
-            {{ __('panel link ') }}
-        </x-panel-nav-link>
-
-        <x-panel-nav-link href="" :active="request()->is('news-edit')" >
-            {{ __('panel link ') }}
-        </x-panel-nav-link>
-        {{-- add responsive  navigation here! --}}
     </div>
 
 </nav>

@@ -25,7 +25,28 @@
                         {{ $usr }}
                     @endisset
                 </div>
+                <div>
+                    <form action="{{ route('news.store') }}" method="POST">
+                        @csrf
+                        <x-label for="title">
+                            {{ __('News title:') }}
+                        </x-label>
+                        <x-input class="m-1" type="text" name="title" id="title" placeholder="title..." />
+                        <x-label for="body">
+                            {{ __('News body:') }}
+                        </x-label>
+                        <x-input class="m-1" type="text" name="body" id="body" placeholder="news content..."  />
+                        <x-label for="img_path">
+                            {{ __('Image:') }}
+                        </x-label>
+                        <x-input class="m-1" type="text" name="img_path" id="img_path" placeholder="img path..."  />
+                        <x-button class="m-1">
+                            {{ __('Confirm') }}
+                        </x-button>
+                    </form>
+                    <x-auth-validation-errors class="mb-4" :errors="$errors"/>
 
+                </div>
 
 
 
@@ -35,6 +56,6 @@
     </div>
 
     <x-slot name="footer">
-        <x-footer />
+        {{-- <x-footer /> --}}
      </x-slot>
 </x-app-layout>

@@ -28,6 +28,7 @@ class NewsRequest extends FormRequest
         return [
             'title' => ['required', 'string','max:100','unique:news' ],
             'body' => ['required', 'string','max:255'],
+            'img_path' => ['string','max:100'],
         ];
     }
 }

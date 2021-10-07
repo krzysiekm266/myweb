@@ -1,10 +1,13 @@
-<nav class="bg-white border-b border-gray-100">
+<nav class="bg-white border-b border-gray-100 w-full mx-auto">
+
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 ">
-        <div class="flex justify-between h-16">
-            <div class="flex">
+    <div class="max-w-7xl mx-auto  inline justify-between">
+
+        <div class="flex  h-16 justify-between mx-auto px-2 sm:px-28 md:px-40 lg:px-64">
+
+            <div class="flex  justify-center">
                 <!-- Logo -->
-                <div class=" flex items-center j">
+                <div class=" flex items-center ">
                     <a href="{{ route('index') }}">
                         <x-application-logo class="block h-10 w-10 fill-current text-gray-600 " />
                     </a>

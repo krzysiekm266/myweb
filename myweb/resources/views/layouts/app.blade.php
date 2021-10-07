@@ -20,12 +20,14 @@
     </head>
     <body  class="font-sans antialiased relative">
         <div {{ $attributes->merge(['class'=>'bg-gray-100 min-h-screen ']) }}>
-              <!-- Main navigation -->
-             <x-navigation>
+            <!-- Main navigation -->
+            <x-navigation>
                 <x-slot name="title">
                     {{ $pageTitle }}
                 </x-slot>
-             </x-navigation>
+            </x-navigation>
+
+
             <!-- Page Heading -->
             <header class="bg-white  shadow  ">
                 <div class="flex sm:space-x-6 max-w-7xl sm:mx-auto sm:py-6 sm:px-4" >

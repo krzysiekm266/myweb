@@ -46,14 +46,17 @@ class NewsController extends Controller
      */
     public function store(NewsRequest $request)
     {
+       $validated =  $request->validate($request->rules());
 
-        $parameters = $request->only('title','body');
-        News::create([
-            'title' => $parameters['title'],
-            'body' =>  $parameters['body'],
+        // $parameters = $request->only('title','body','img_path');
+        // News::create([
+        //     'title' => $parameters['title'],
+        //     'body' =>  $parameters['body'],
+        //     'img_path' =>  $parameters['img_path'],
 
-        ])->save();
-        // $news->save();
+        // ])->save();
+        News::create( $request->only('title','body','img_path'))->save();
+        return redirect()->intended(route('news.create'))->withErrors(['succes'=>'News create.']);
     }
 
     /**

@@ -1,5 +1,5 @@
 @php
-    $pTitle="Administrator Panel";
+    $pTitle="Profile";
 @endphp
 <x-app-layout >
     <x-slot name="pageTitle">
@@ -9,7 +9,7 @@
     <x-slot name="header">
         <div class="hidden sm:flex sm:flex-col sm:items-center  w-full">
             <h2 class="flex  sm:items-center font-semibold text-xl text-gray-800 leading-tight ">
-                {{ $pTitle }}
+                {{  $pTitle }}
             </h2>
         </div>
     </x-slot>
@@ -30,11 +30,12 @@
                         </span>
                     </x-label>
 
-                    <x-label for="email">
-                        {{ __('Change your e-mail:') }}
-                    </x-label>
+
                     <form id="email" action="{{ route('change_email') }}" method="POST" class="">
                         @csrf
+                        <x-label for="email">
+                            {{ __('Change your e-mail:') }}
+                        </x-label>
                         <x-input class="m-1" type="email" name="new_email"          id="new_email"          placeholder="new e-mail" required />
                         <x-input class="m-1" type="email" name="new_email_confirm"  id="new_email_confirm"  placeholder="confirm e-mail" required />
                         <x-button class="m-1">
@@ -66,6 +67,6 @@
     </div>
 
     <x-slot name="footer">
-        <x-footer />
+        {{-- <x-footer /> --}}
      </x-slot>
 </x-app-layout>

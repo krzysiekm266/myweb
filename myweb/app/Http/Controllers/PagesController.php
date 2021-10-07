@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
+// This controller is responsible for main/panel navigation.
+//Authentication has its own controllers( Auth folder - breeze)
 class PagesController extends Controller
 {
     /**
@@ -34,7 +36,7 @@ class PagesController extends Controller
 
     }
     /**
-     *News page
+     *About page
      */
     public function about()
     {
