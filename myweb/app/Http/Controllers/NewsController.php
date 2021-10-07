@@ -15,7 +15,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-
+       $news = News::all();
+       return view('pages.news',['news'=>$news]);
 
     }
 
@@ -56,7 +57,7 @@ class NewsController extends Controller
 
         // ])->save();
         News::create( $request->only('title','body','img_path'))->save();
-        return redirect()->intended(route('news.create'))->withErrors(['succes'=>'News create.']);
+        return redirect()->intended(route('news.create'))->withErrors(['sucess'=>'News create.']);
     }
 
     /**

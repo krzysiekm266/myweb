@@ -9,6 +9,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/news/store',[NewsController::class,'store'])->name('news.store');
 
 });
+Route::get('/news/index',[NewsController::class,'index'])->name('news.all');
 
 
 

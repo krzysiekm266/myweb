@@ -51,9 +51,11 @@
             <main class="w-full">
                 {{ $slot }}
             </main>
-            <footer>
-                {{ $footer }}
-            </footer>
+
         </div>
+
+        <footer>
+            {{ $footer }}
+        </footer>
     </body>
 </html>
