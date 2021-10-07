@@ -13,7 +13,7 @@
         </div>
     </x-slot>
 
-    <div class=" py-12 w-3/4 mx-auto " >
+    <div class=" py-12 md:w-1/2 mx-auto " >
         <div class=" mx-auto">
             <div class="bg-white  shadow-sm mx-auto  rounded-md ">
                 <div class=" h-auto w-full mx-auto relative">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewsRequest;
 use Illuminate\Http\Request;
 use App\Models\News;
 
@@ -25,7 +26,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.panel-news-editor');
     }
 
     /**
@@ -34,9 +35,16 @@ class NewsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(NewsRequest $request)
     {
-        //
+
+        $parameters = $request->only('title','body');
+        News::create([
+            'title' => $parameters['title'],
+            'body' =>  $parameters['body'],
+
+        ])->save();
+        // $news->save();
     }
 
     /**

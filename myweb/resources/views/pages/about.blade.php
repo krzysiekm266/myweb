@@ -14,7 +14,7 @@
         </div>
     </x-slot>
 
-    <div class="pt-12 pb-2">
+    <div class="pt-12 pb-2 md:w-1/2 mx-auto">
         <div class="max-w-7xl mx-auto ">
             <div class="bg-gray-100 ">
                 <x-content-layout>

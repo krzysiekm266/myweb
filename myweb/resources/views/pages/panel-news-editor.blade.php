@@ -15,7 +15,7 @@
     </x-slot>
 
     {{-- default slot/page content --}}
-    <div class="">
+    <div class="pt-12 pb-2 md:w-1/2 mx-auto">
         <div class="max-w-7xl mx-auto sm:px-6 ">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-md">
                 <div class="p-4 bg-white border-b border-gray-200">

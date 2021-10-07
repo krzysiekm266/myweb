@@ -42,15 +42,11 @@ class PagesController extends Controller
         return view('pages.about');
 
     }
-    /************************************************************
-     *News edit  page
-     */
-    public function editNews()
-    {
 
-        return view('pages.panel-news-editor');
+public function editNews()
+{
 
-    }
-
+    return view('pages.panel-news-editor');
+}
 
 }
