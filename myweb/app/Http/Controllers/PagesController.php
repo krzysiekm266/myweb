@@ -23,7 +23,7 @@ class PagesController extends Controller
     */
     public function panel()
     {
-        return view('pages.panel');
+        return view('pages.panel-profile');
     }
 
     /**
@@ -43,6 +43,16 @@ class PagesController extends Controller
     {
 
         return view('pages.about');
+
+    }
+
+    /**
+     *Projects page
+     */
+    public function projects()
+    {
+
+        return view('pages.projects');
 
     }
 

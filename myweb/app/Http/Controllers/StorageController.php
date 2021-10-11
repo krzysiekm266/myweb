@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\NewsRequest;
 use Illuminate\Http\Request;
-use App\Models\News;
-use Illuminate\Support\Facades\Auth;
 
-class NewsController extends Controller
+class StorageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +13,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-
-       return view('pages.news',['news' => News::orderBy('created_at','DESC')->get()]);
-
+        //
     }
 
     /**
@@ -28,16 +23,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-
-         if( Auth::check() && Auth::user()->name == 'admin')
-         {
-            return view('pages.panel-news-editor');
-         }
-         else
-         {
-            return redirect()->route('login');
-         }
-
+        return view('pages.panel-storage');
     }
 
     /**
@@ -46,19 +32,9 @@ class NewsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(NewsRequest $request)
+    public function store(Request $request)
     {
-       $validated =  $request->validate($request->rules());
-
-        // $parameters = $request->only('title','body','img_path');
-        // News::create([
-        //     'title' => $parameters['title'],
-        //     'body' =>  $parameters['body'],
-        //     'img_path' =>  $parameters['img_path'],
-
-        // ])->save();
-        News::create( $request->only('title','body','img_path'))->save();
-        return back()->withErrors(['sucess'=>'News create.']);
+        //
     }
 
     /**

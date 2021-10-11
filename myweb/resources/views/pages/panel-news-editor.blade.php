@@ -15,36 +15,40 @@
     </x-slot>
 
     {{-- default slot/page content --}}
-    <div class="pt-12 pb-2 md:w-1/2 mx-auto">
-        <div class="max-w-7xl mx-auto sm:px-6 ">
+    <div class=" md:w-1/2 mx-auto">
+        <div class="max-w-7xl mx-auto px-2 ">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-md">
-                <div class="p-4 bg-white border-b border-gray-200">
+                <div class="p-4 bg-white border-b border-gray-200 w-full text-center">
                     You're logged in!
                     Welcome to News Editor.
                     @isset($usr)
                         {{ $usr }}
                     @endisset
                 </div>
-                <div>
-                    <form action="{{ route('news.store') }}" method="POST">
+                <div >
+                    <form action="{{ route('news.store') }}" method="POST" class="mx-4 w-max-content ">
                         @csrf
-                        <x-label for="title">
+                        <x-auth-validation-errors class="m-4" :errors="$errors"/><br>
+                        <x-label for="title" >
                             {{ __('News title:') }}
                         </x-label>
-                        <x-input class="m-1" type="text" name="title" id="title" placeholder="title..." />
+                        <x-input class="m-1 w-full" type="text" name="title" id="title" placeholder="title..." />
                         <x-label for="body">
-                            {{ __('News body:') }}
+                            {{ __('News content:') }}
                         </x-label>
-                        <x-input class="m-1" type="text" name="body" id="body" placeholder="news content..."  />
+                        <textarea class="m-1 w-full  h-60"  name="body" id="body" placeholder="news content..."  >
+                        </textarea>
                         <x-label for="img_path">
                             {{ __('Image:') }}
                         </x-label>
-                        <x-input class="m-1" type="text" name="img_path" id="img_path" placeholder="img path..."  />
+                        <x-input class="m-1" type="text" name="img_path" id="img_path" placeholder="img path..."  /><br>
+
                         <x-button class="m-1">
-                            {{ __('Confirm') }}
+                            {{ __('Create') }}
                         </x-button>
+
                     </form>
-                    <x-auth-validation-errors class="mb-4" :errors="$errors"/>
+
 
                 </div>
 

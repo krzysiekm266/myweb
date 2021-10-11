@@ -18,11 +18,13 @@ use Illuminate\Support\Facades\Route;
 require __DIR__.'/breeze/auth.php';
 require __DIR__.'/web/news.php';
 require __DIR__.'/web/panel.php';
+require __DIR__.'/web/storage.php';
 require __DIR__.'/web/user.php';
 
 Route::get('/',[PagesController::class,'index'])->name('index');
 Route::get('/news',[PagesController::class,'news'])->name('news');
 Route::get('/about',[PagesController::class,'about'])->name('about');
+Route::get('/projects',[PagesController::class,'projects'])->name('projects');
 
 
 

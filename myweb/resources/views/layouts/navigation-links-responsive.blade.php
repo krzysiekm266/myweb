@@ -9,7 +9,7 @@
     @endauth
 
     <div class="sm:hidden w-full">
-        <x-responsive-nav-link :href="route('news')" :active="request()->is('news')">
+        <x-responsive-nav-link :href="route('news')" :active="request()->is('news*')">
             {{ __('News') }}
         </x-responsive-nav-link>
     </div>
@@ -17,6 +17,12 @@
     <div class="sm:hidden w-full">
         <x-responsive-nav-link :href="route('about')" :active="request()->is('about')">
             {{ __('About') }}
+        </x-responsive-nav-link>
+    </div>
+
+    <div class="sm:hidden w-full">
+        <x-responsive-nav-link :href="route('projects')" :active="request()->is('projects*')">
+            {{ __('Projects') }}
         </x-responsive-nav-link>
     </div>
 

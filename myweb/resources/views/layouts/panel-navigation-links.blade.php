@@ -8,9 +8,9 @@
             {{ __('News edit ') }}
         </x-panel-nav-link>
 
-        {{-- <x-panel-nav-link href="" :active="request()->is('news-edit')" >
-            {{ __('panel link ') }}
-        </x-panel-nav-link> --}}
+        <x-panel-nav-link :href="route('storage.create')" :active="request()->is('panel/storage*')" >
+            {{ __('Storage ') }}
+        </x-panel-nav-link>
 
 
     </div>

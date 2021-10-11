@@ -17,7 +17,6 @@ class CreateNewsTable extends Migration
             $table->id();
             $table->text('title')->unique();
             $table->longText('body');
-            $table->timestamp('news_created_at');
             $table->timestamps();
             $table->text('img_path');
         });
