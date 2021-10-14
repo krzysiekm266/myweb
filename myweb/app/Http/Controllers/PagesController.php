@@ -33,7 +33,7 @@ class PagesController extends Controller
     {
 
         // return view('pages.news');
-        return redirect(route('news.all'));
+        return redirect()->route('news.all');
 
     }
     /**

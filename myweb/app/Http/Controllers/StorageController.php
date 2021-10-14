@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class StorageController extends Controller
 {
+    private int $nr=0;
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +25,8 @@ class StorageController extends Controller
      */
     public function create()
     {
-        return view('pages.panel-storage');
+        $files = Storage::files('images');
+        return view('pages.panel-storage',['files'=>$files]);
     }
 
     /**
@@ -34,7 +37,14 @@ class StorageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+       $request->validate([
+           'new_file'=>'required ',
+       ]);
+
+        $path = Storage::putFile('images',$request->file('new_file'));
+
+        return back()->withErrors(['sucess'=>' File  stored.'])->with('path',$path);
     }
 
     /**

@@ -50,14 +50,8 @@ class NewsController extends Controller
     {
        $validated =  $request->validate($request->rules());
 
-        // $parameters = $request->only('title','body','img_path');
-        // News::create([
-        //     'title' => $parameters['title'],
-        //     'body' =>  $parameters['body'],
-        //     'img_path' =>  $parameters['img_path'],
-
-        // ])->save();
         News::create( $request->only('title','body','img_path'))->save();
+
         return back()->withErrors(['sucess'=>'News create.']);
     }
 
