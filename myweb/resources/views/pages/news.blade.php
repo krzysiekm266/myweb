@@ -37,10 +37,6 @@
 
                     @isset($news)
                       @foreach ($news as $item)
-                          {{-- {{ $item->id }} ::
-                          {{ $item->title }} ::
-                          {{ $item->body }} ::
-                          {{ $item->img_path }} <br> --}}
 
                         <x-single-news :imgPath=" $item->img_path ">
                             <x-slot name="title">

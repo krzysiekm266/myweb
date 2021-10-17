@@ -15,52 +15,53 @@
     </x-slot>
 
     {{-- default slot/page content --}}
-    <div class="md:w-1/2 mx-auto">
-        <div class="max-w-7xl mx-auto sm:px-6 ">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-md">
+    <div class="mx-auto ">
+        <div class="max-w-7xl mx-auto border ">
+            <div class="bg-white  shadow-sm sm:rounded-md  ">
                 <div class="p-4 bg-white border-b border-gray-200 text-center">
                     You're logged in!
                     Welcome to Administrator Panel.
                 </div>
+
+                <x-auth-validation-errors class="m-1 mb-4 w-max-content sm:w-1/2 sm:mx-auto" :errors="$errors"/>
                 {{-- Email settings --}}
-                <div  class="p-6 bg-white border-b border-gray-200">
-                    <x-label class="my-1 mb-6 font-semibold">{{ __('Your current e-mail:' ) }}
+                <div  class="p-6 pb-0 bg-white h-auto">
+
+                    <x-label class="my-1 mb-6 font-semibold  w-max-content sm:w-1/2 sm:mx-auto">
+                        {{ __('Your current e-mail:' ) }}
                         <span class="font-bold text-base">
                             {{ Auth::user()->email }}
                         </span>
                     </x-label>
 
-
-                    <form id="email" action="{{ route('change_email') }}" method="POST" class="">
+                    <form id="email" action="{{ route('change_email') }}" method="POST" class="w-max-content border-t border-gray-200 flex flex-col">
                         @csrf
-                        <x-label for="email">
+                        <x-label for="email"  class="m-1 w-max-content sm:w-1/2 sm:mx-auto">
                             {{ __('Change your e-mail:') }}
                         </x-label>
-                        <x-input class="m-1" type="email" name="new_email"          id="new_email"          placeholder="new e-mail" required />
-                        <x-input class="m-1" type="email" name="new_email_confirm"  id="new_email_confirm"  placeholder="confirm e-mail" required />
-                        <x-button class="m-1">
+
+                        <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="email" name="new_email"          id="new-email"          placeholder="new e-mail" required />
+                        <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="email" name="new_email_confirm"  id="new-email_confirm"  placeholder="confirm e-mail" required />
+                        <x-button class=" m-1 w-max-content sm:w-1/2 sm:mx-auto">
                             {{ __('Confirm') }}
                         </x-button>
                     </form>
-
-                    <x-auth-validation-errors class="mb-4" :errors="$errors"/>
                 </div>
-                {{-- Password settings --}}
-                <div  class="p-6 bg-white border-b border-gray-200">
 
-                    <x-label for="password">
-                        {{ __('Change your password:') }}
-                    </x-label>
-                    <form id="password" action="{{ route('change_email') }}" method="POST">
+                {{-- Password settings --}}
+                <div  class="p-6  bg-white h-auto">
+                    <form id="password" action="{{ route('change_email') }}" method="POST" class="w-max-content border-t border-gray-200 flex flex-col">
                         @csrf
-                        <x-input class="m-1" type="password" name="new_password"          id="new_password"          placeholder="new password" required/>
-                        <x-input class="m-1" type="password" name="new_password_confirm"  id="new_password_confirm"  placeholder="confirm password" required />
-                        <x-button class="m-1">
+                        <x-label for="password" class="m-1 w-max-content sm:w-1/2 sm:mx-auto">
+                            {{ __('Change your password:') }}
+                        </x-label>
+
+                        <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="password" name="new_password"          id="new-password"          placeholder="new password" required/>
+                        <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="password" name="new_password_confirm"  id="new-password_confirm"  placeholder="confirm password" required />
+                        <x-button class="m-1 w-max-content sm:w-1/2 sm:mx-auto">
                             {{ __('Confirm') }}
                         </x-button>
                     </form>
-
-                    <x-auth-validation-errors class="mb-4" :errors="$errors"/>
                 </div>
             </div>
         </div>

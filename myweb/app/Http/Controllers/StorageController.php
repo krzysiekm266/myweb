@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class StorageController extends Controller
 {
-    private int $nr=0;
+
     /**
      * Display a listing of the resource.
      *
@@ -25,8 +25,8 @@ class StorageController extends Controller
      */
     public function create()
     {
-        $files = Storage::files('images');
-        return view('pages.panel-storage',['files'=>$files]);
+        // $images = Storage::files('images');
+        return view('pages.panel-storage',['images'=>Storage::files('images')]);
     }
 
     /**
@@ -39,12 +39,14 @@ class StorageController extends Controller
     {
 
        $request->validate([
-           'new_file'=>'required ',
+           'add_image'=>'required ',
        ]);
 
-        $path = Storage::putFile('images',$request->file('new_file'));
+        $path = Storage::putFile('images',$request->file('add_image'));
 
-        return back()->withErrors(['sucess'=>' File  stored.'])->with('path',$path);
+        return redirect()->route('storage.create')
+                        ->withErrors(['sucess'=>' Image is saved.'])
+                        ->with('path',$path);
     }
 
     /**

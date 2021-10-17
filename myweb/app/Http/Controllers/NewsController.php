@@ -28,7 +28,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-
+        //do poprawy
          if( Auth::check() && Auth::user()->name == 'admin')
          {
             return view('pages.panel-news-editor');
@@ -48,9 +48,8 @@ class NewsController extends Controller
      */
     public function store(NewsRequest $request)
     {
-       $validated =  $request->validate($request->rules());
-
-        News::create( $request->only('title','body','img_path'))->save();
+        // News::create( $request->only('title','body','img_path'))->save();
+        News::create( $request->validated())->save();
 
         return back()->withErrors(['sucess'=>'News create.']);
     }

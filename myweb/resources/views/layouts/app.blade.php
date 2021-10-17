@@ -48,7 +48,7 @@
             </div>
             @endauth
             <!-- Page Content -->
-            <main class="w-full">
+            <main class="w-full h-auto">
                 {{ $slot }}
             </main>
 

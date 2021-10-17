@@ -4029,9 +4029,27 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
+var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    upperCase = _require.upperCase;
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
+
+function setupInputImage() {
+  var imgInput = document.getElementById('add-image');
+  var imgPath = document.getElementById('img-path');
+  var imgPreview = document.getElementById('img-preview');
+  var imgTitle = document.getElementById('img-title');
+  imgInput.addEventListener('change', function () {
+    imgTitle.innerText.replace(upperCase('Add image...'), 'Selected file: ');
+    imgPath.innerText = imgInput.files[0].name;
+    var filePath = URL.createObjectURL(imgInput.files[0]);
+    imgPreview.setAttribute('src', filePath);
+  });
+}
+
+document.addEventListener('onload', setupInputImage());
 
 /***/ }),
 

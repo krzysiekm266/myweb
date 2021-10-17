@@ -20,33 +20,22 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-md">
                 <div class="p-4 bg-white border-b border-gray-200 text-center">
                     You're logged in!
-                    Welcome to Administrator Panel Storage.
+                    Welcome to  Storage.
                 </div>
                 <div>
-                    <form action="{{ route('storage.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('storage.store') }}" method="POST" enctype="multipart/form-data" class="flex flex-col">
                         @csrf
                         <x-auth-validation-errors class="m-4" :errors="$errors"/><br>
-                        <x-label for="new_file" >
-                            {{ __('Add new file: ') }}
-                        </x-label>
-                        <img src="" alt="image_preview" class="w-20 h-20">
-                        <x-input id="new_file" name="new_file"  type="file" class="m-1 h-10 w-full"/><br>
-                        <x-button class="m-1">
-                            {{ __('Add file') }}
+                        <x-input-image imagePath="{{ __('No file selected.') }}" title="Add image..." />
+                        <br>
+                        <x-button class="m-1 w-max-content">
+                            {{ __('Save ') }}
                         </x-button>
                     </form>
                 </div>
                 <h1 class="mx-1 mt-4 px-2 text-xl border-b border-gray-300">{{ __('Image list: ') }}</h1>
                 {{-- stored files --}}
-                <div class="flex flex-wrap p-1">
-
-                    @isset($files)
-
-                        @foreach ($files as $file)
-                            <img src="{{asset($file) }}" alt="altpath" class="w-28 h-28 m-1" />
-                        @endforeach
-                    @endisset
-                </div>
+                <x-storage :imgFiles="$images" />
 
             </div>
         </div>
