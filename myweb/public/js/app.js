@@ -4037,13 +4037,16 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
 function setupInputImage() {
-  var imgInput = document.getElementById('add-image');
+  var imgInput = document.getElementById('img-input');
+  var imgFilename = document.getElementById('img-filename');
   var imgPath = document.getElementById('img-path');
   var imgPreview = document.getElementById('img-preview');
   var imgTitle = document.getElementById('img-title');
+  var imgTitleSelected = document.getElementById('img-title-selected');
   imgInput.addEventListener('change', function () {
-    imgTitle.innerText.replace(upperCase('Add image...'), 'Selected file: ');
+    imgTitle.innerText = imgTitleSelected.innerText;
     imgPath.innerText = imgInput.files[0].name;
+    imgFilename.setAttribute('value', imgInput.files[0].name);
     var filePath = URL.createObjectURL(imgInput.files[0]);
     imgPreview.setAttribute('src', filePath);
   });

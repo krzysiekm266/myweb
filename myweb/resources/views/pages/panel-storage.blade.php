@@ -26,7 +26,7 @@
                     <form action="{{ route('storage.store') }}" method="POST" enctype="multipart/form-data" class="flex flex-col">
                         @csrf
                         <x-auth-validation-errors class="m-4" :errors="$errors"/><br>
-                        <x-input-image imagePath="{{ __('No file selected.') }}" title="Add image..." />
+                        <x-input-image title="{{ __('Add image...') }}" selectedTitle="{{ __('Selected image: ') }}" imagePath="{{ __('No file selected.') }}"  />
                         <br>
                         <x-button class="m-1 w-max-content">
                             {{ __('Save ') }}

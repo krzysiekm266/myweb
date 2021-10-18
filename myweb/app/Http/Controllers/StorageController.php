@@ -39,14 +39,24 @@ class StorageController extends Controller
     {
 
        $request->validate([
-           'add_image'=>'required ',
+           'img_input'=>'required ',
+           'img_filename'=>'required',
        ]);
 
-        $path = Storage::putFile('images',$request->file('add_image'));
+        $filename = $request->input('img_filename');
+
+        if(Storage::exists('images/'.$filename))
+        {
+            return redirect()->route('storage.create')
+                             ->withErrors(['file_error'=>' Image '.$filename.' already exist.']);
+        }
+
+        Storage::putFileAs('images',$request->file('img_input'),$filename);
 
         return redirect()->route('storage.create')
-                        ->withErrors(['sucess'=>' Image is saved.'])
-                        ->with('path',$path);
+                        ->withErrors(['sucess'=>' Image '.$filename.' is saved.']);
+
+
     }
 
     /**
