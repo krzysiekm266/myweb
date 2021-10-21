@@ -56,7 +56,6 @@ class StorageController extends Controller
         return redirect()->route('storage.create')
                         ->withErrors(['sucess'=>' Image '.$filename.' is saved.']);
 
-
     }
 
     /**
@@ -99,8 +98,21 @@ class StorageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $path = $request->img_path;
+        // do przetestowania
+        if(Storage::exists($path))
+        {
+            Storage::delete([$path]);
+
+            return redirect()->route('storage.create')
+                            ->withErrors(['sucess'=>' Image '.$path.' deleted.']);
+        }
+        else
+        {
+            return redirect()->route('storage.create')
+                            ->withErrors(['file_error'=>' Image '.$path.' doesnt  exist.']);
+        }
     }
 }

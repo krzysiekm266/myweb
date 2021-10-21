@@ -35,7 +35,7 @@
                 </div>
                 <h1 class="mx-1 mt-4 px-2 text-xl border-b border-gray-300">{{ __('Image list: ') }}</h1>
                 {{-- stored files --}}
-                <x-storage :imgFiles="$images" />
+                <x-storage :imgFiles="$images" :newsStorage=false />
 
             </div>
         </div>

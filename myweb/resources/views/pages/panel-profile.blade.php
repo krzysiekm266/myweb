@@ -25,9 +25,9 @@
 
                 <x-auth-validation-errors class="m-1 mb-4 w-max-content sm:w-1/2 sm:mx-auto" :errors="$errors"/>
                 {{-- Email settings --}}
-                <div  class="p-6 pb-0 bg-white h-auto">
+                <div  class="p-6 pb-0 bg-white h-auto text-center">
 
-                    <x-label class="my-1 mb-6 font-semibold  w-max-content sm:w-1/2 sm:mx-auto">
+                    <x-label class="my-1 mb-6 font-semibold  w-full sm:w-1/2 sm:mx-auto">
                         {{ __('Your current e-mail:' ) }}
                         <span class="font-bold text-base">
                             {{ Auth::user()->email }}
@@ -36,7 +36,7 @@
 
                     <form id="email" action="{{ route('change_email') }}" method="POST" class="w-max-content border-t border-gray-200 flex flex-col">
                         @csrf
-                        <x-label for="email"  class="m-1 w-max-content sm:w-1/2 sm:mx-auto">
+                        <x-label for="email"  class="text-left m-1 w-max-content sm:w-1/2 sm:mx-auto">
                             {{ __('Change your e-mail:') }}
                         </x-label>
 

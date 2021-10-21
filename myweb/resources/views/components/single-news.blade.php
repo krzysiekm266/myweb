@@ -8,8 +8,8 @@
 
     <div class=" flex flex-col  m-2 w-max-content  border-b border-gray-500 ">
 
-        <p class="p-2 ">
-            <img class="block rounded-md w-60 h-40 bg-main float-left m-2 " src="{{ $imgPath }}" />
+        <p class="p-2 align-bottom">
+            <img class="block rounded-md w-60 h-40 bg-main float-left m-2 " src="{{ asset($imgPath)}}" />
             {{ $body }}
         </p>
     </div>
