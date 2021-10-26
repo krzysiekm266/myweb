@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Facades\Auth;
 
-class NewsRequest extends FormRequest
+class StorageRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -14,8 +13,8 @@ class NewsRequest extends FormRequest
      */
     public function authorize()
     {
+        // return $this->authorize('store_image');
         return true;
-
     }
 
     /**
@@ -26,10 +25,8 @@ class NewsRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required', 'string','max:100','min:5','unique:news' ],
-            'body' => ['required', 'string','max:255'],
-            'img_path' => ['required' ,'string','max:100'],
-            'user_id'=>['required']
+            'img_input'=>'required ',
+            'img_filename'=>'required',
         ];
     }
 }

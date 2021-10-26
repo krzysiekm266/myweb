@@ -19,6 +19,7 @@ class News extends Model
         'title',
         'body',
         'img_path',
+        'user_id'
     ];
 
 
@@ -31,4 +32,8 @@ class News extends Model
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

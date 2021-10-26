@@ -17,35 +17,16 @@
     <div class="pt-12 pb-2 md:w-1/2 mx-auto">
         <div class="max-w-7xl mx-auto ">
             <div class="bg-gray-100 ">
+                <x-auth-validation-errors class="m-4" :errors="$errors"/>
                 <x-content-layout class=" ">
-                    <x-single-news imgPath=" image ">
-                        <x-slot name="title">
-                            Tutul
-                        </x-slot>
-                        <x-slot name="body">
-                           Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                           Accusantium eveniet maxime doloremque quam unde sapiente quia praesentium quae
-                           eligendi placeat! Numquam consequuntur illo molestias tempora vitae quam iusto accusantium cupiditate.
-                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, labore necessitatibus delectus perferendis saepe
-                           aspernatur possimus quibusdam voluptatibus cupiditate
-                            hic suscipit libero recusandae at sapiente reprehenderit voluptatum vitae ducimus incidunt!
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis, quam fugiat perferendis earum suscipit assumenda? Eligendi
-                            libero exercitationem id ullam. Est minus officia perspiciatis
-                            quisquam, illo nihil repellat autem maiores.
-                        </x-slot>
-                    </x-single-news>
+                    <x-single-news />
 
-                    @isset($news)
-                      @foreach ($news as $item)
 
-                        <x-single-news :imgPath=" $item->img_path ">
-                            <x-slot name="title">
-                                {{ $item->title }}
-                            </x-slot>
-                            <x-slot name="body">
-                                {{ $item->body }}
-                            </x-slot>
-                        </x-single-news>
+
+                    @isset($allNews)
+                      @foreach ($allNews as $news)
+
+                        <x-single-news :news="$news" />
 
                       @endforeach
 

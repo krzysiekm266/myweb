@@ -15,8 +15,11 @@ Route::group(
         'as'=>'news.',
     ],
     function () {
-        Route::get('create',[NewsController::class,'create'])->name('create');
+        Route::match(['get','post'],'create',[NewsController::class,'create'])->name('create');
         Route::post('store',[NewsController::class,'store'])->name('store');
+        Route::delete('delete/{news}',[NewsController::class,'destroy'])->name('delete');
+
+
     }
 );
 

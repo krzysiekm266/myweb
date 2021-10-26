@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\NewsRequest;
 use Illuminate\Http\Request;
 use App\Models\News;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -18,7 +19,7 @@ class NewsController extends Controller
     public function index()
     {
 
-       return view('pages.news',['news' => News::orderBy('created_at','DESC')->get()]);
+       return view('pages.news',['allNews' => News::orderBy('created_at','DESC')->get()]);
 
     }
 
@@ -29,16 +30,16 @@ class NewsController extends Controller
      */
     public function create(Request $request)
     {
-
+        $this->authorize('create',News::class);
         //do poprawy
-         if( Auth::check() && Auth::user()->name == 'admin')
+         if( Auth::check() && Auth::user()->name == 'administrator')
          {
             return view('pages.panel-news-editor',
                 [
                     'images'=>Storage::files('images'),
                     'img_path'=>$request->img_path,
                 ]
-            );
+                );
          }
          else
          {
@@ -55,7 +56,8 @@ class NewsController extends Controller
      */
     public function store(NewsRequest $request)
     {
-        // News::create( $request->only('title','body','img_path'))->save();
+       $this->authorize('create',News::class);
+
         News::create( $request->validated())->save();
 
         return back()->withErrors(['sucess'=>'News create.']);
@@ -101,8 +103,16 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(News $news)
     {
-        //
+
+        $this->authorize('delete',$news);
+
+        $newsAuthor=' temp';
+
+        $newsId = $news->id;
+        $news->delete();
+
+        return back()->withErrors(['sucess'=>'News  id: '.$newsId.'author: '.$newsAuthor.' deleted.']);
     }
 }

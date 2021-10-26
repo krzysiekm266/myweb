@@ -7,7 +7,8 @@
 
     @isset($images)
         @foreach ($images as $img)
-        <div class="mx-1">
+
+        <div class="mx-1 ">
             <img src="{{asset($img) }}" alt="" class="w-28 h-28 m-1" />
             @if (!$newsStorage)
 
@@ -24,7 +25,7 @@
 
             @if ($newsStorage)
 
-            <form action="{{ route('news.create') }}" method="GET" class="flex flex-col">
+            <form action="{{ route('news.create') }}" method="POST" class="flex flex-col">
                 @csrf
                 <input type="text" name="img_path" value="{{ $img }}" hidden>
                 <x-button class="w-3/4 mx-auto ">
@@ -35,7 +36,6 @@
             @endif
         </div>
 
-            {{-- {{ $img }} --}}
         @endforeach
     @endisset
 

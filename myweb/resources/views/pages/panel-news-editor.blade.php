@@ -34,14 +34,14 @@
                         <x-label for="title" class="m-1 " >
                             {{ __('News title:') }}
                         </x-label>
-                        <x-input class="m-1 mb-2 w-full" type="text" name="title" id="title" placeholder="title...{{ old('title') }}" />
+                        <x-input class="m-1 mb-2 w-full" type="text" name="title" id="title" placeholder="title..." value="{{ old('title') }}" />
+
                         <x-label for="body" class="m-1">
-                            {{ __('News content:') }}
+                            {{ __('News body:') }}
                         </x-label>
-                        <textarea class="m-1 mb-2w-full  h-60"  name="body" id="body" placeholder="news content..."  >
+                        <textarea class="m-1 mb-2w-full  h-60"  name="body" id="body"  >
+                            {{ old('body') }}
                         </textarea>
-
-
 
                         <x-button class="m-1 w-3/4 mx-auto h-12">
                             {{ __('Create') }}
@@ -51,10 +51,16 @@
                             {{ __('Selected image:') }}
                         </x-label>
                         <img src="{{ asset($img_path) }}" alt="" class="w-40 h-40 mb-2">
-                        <x-input class="m-1 hidden" type="text" name="img_path" id="img_path" placeholder="img path..." value="{{ $img_path }} " />
+                        <x-input class="m-1 hidden" type="text" name="img_path" id="img_path"  value="{{ $img_path }} " />
+
+                        <x-input class="m-1 hidden" type="number" name="user_id" id="user_id" value="{{ Auth::user()->id }} " />
+
+
                     </form>
+
                     <h1 class="mx-1 mt-4 px-2 text-xl border-b border-gray-300">{{ __('Image list: ') }}</h1>
                     <x-storage :imgFiles="$images" :newsStorage=true />
+
 
                 </div>
 

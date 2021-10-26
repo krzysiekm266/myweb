@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorageRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -25,6 +26,7 @@ class StorageController extends Controller
      */
     public function create()
     {
+        $this->authorize('store_image');
         // $images = Storage::files('images');
         return view('pages.panel-storage',['images'=>Storage::files('images')]);
     }
@@ -35,13 +37,14 @@ class StorageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorageRequest $request)
     {
 
-       $request->validate([
-           'img_input'=>'required ',
-           'img_filename'=>'required',
-       ]);
+    //    $request->validate([
+    //        'img_input'=>'required ',
+    //        'img_filename'=>'required',
+    //    ]);
+         $this->authorize('store_image');
 
         $filename = $request->input('img_filename');
 
@@ -100,6 +103,7 @@ class StorageController extends Controller
      */
     public function destroy(Request $request)
     {
+        $this->authorize('delete_image');
         $path = $request->img_path;
         // do przetestowania
         if(Storage::exists($path))

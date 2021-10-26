@@ -34,14 +34,14 @@
                         </span>
                     </x-label>
 
-                    <form id="email" action="{{ route('change_email') }}" method="POST" class="w-max-content border-t border-gray-200 flex flex-col">
+                    <form id="email" action="{{ route('user.update.email') }}" method="POST" class="w-max-content border-t border-gray-200 flex flex-col">
                         @csrf
                         <x-label for="email"  class="text-left m-1 w-max-content sm:w-1/2 sm:mx-auto">
                             {{ __('Change your e-mail:') }}
                         </x-label>
 
                         <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="email" name="new_email"          id="new-email"          placeholder="new e-mail" required />
-                        <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="email" name="new_email_confirm"  id="new-email_confirm"  placeholder="confirm e-mail" required />
+                        <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="email" name="new_email_confirmation" id="new-email-confirmation"  placeholder="confirm e-mail" required />
                         <x-button class=" m-1 w-max-content sm:w-1/2 sm:mx-auto">
                             {{ __('Confirm') }}
                         </x-button>
@@ -50,14 +50,14 @@
 
                 {{-- Password settings --}}
                 <div  class="p-6  bg-white h-auto">
-                    <form id="password" action="{{ route('change_email') }}" method="POST" class="w-max-content border-t border-gray-200 flex flex-col">
+                    <form id="password" action="{{ route('user.update.email') }}" method="POST" class="w-max-content border-t border-gray-200 flex flex-col">
                         @csrf
                         <x-label for="password" class="m-1 w-max-content sm:w-1/2 sm:mx-auto">
                             {{ __('Change your password:') }}
                         </x-label>
 
-                        <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="password" name="new_password"          id="new-password"          placeholder="new password" required/>
-                        <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="password" name="new_password_confirm"  id="new-password_confirm"  placeholder="confirm password" required />
+                        <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="password" name="new_password" id="new-password" placeholder="new password" required/>
+                        <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="password" name="new_password_confirmation"  id="new-password-confirmation"  placeholder="confirm password" required />
                         <x-button class="m-1 w-max-content sm:w-1/2 sm:mx-auto">
                             {{ __('Confirm') }}
                         </x-button>

@@ -52,11 +52,11 @@ class UserController extends Controller
      */
     public function update(Request $request)
     {
-        if($request->new_email !== $request->new_email_confirm)
-        {
-            return back()->withErrors(['email_error' =>  __('E-mails should be the same!') ]);
-        }
-       $usr =  User::where('name','=','admin')->first();
+
+        $request->validate([
+            'new_email'=>['required,confirmed'],
+        ]);
+       $usr =  User::where('id',1)->first();
        $usr->email = $request->new_email;
        $usr->save();
 
