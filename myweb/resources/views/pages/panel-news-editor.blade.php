@@ -34,8 +34,9 @@
                         <x-label for="title" class="m-1 " >
                             {{ __('News title:') }}
                         </x-label>
-                        <x-input class="m-1 mb-2 w-full" type="text" name="title" id="title" placeholder="title..." value="{{ old('title') }}" />
-
+                        <x-input class="m-1 mb-2 w-full" type="text" name="title" id="title" placeholder="title..."
+                            value="{{ old('title') ?? $request->session()->get('title', 'default'); $request->session()->put('title', old('title') ) }}" />
+                        {{-- do sprawdzenia --}}
                         <x-label for="body" class="m-1">
                             {{ __('News body:') }}
                         </x-label>
@@ -55,17 +56,12 @@
 
                         <x-input class="m-1 hidden" type="number" name="user_id" id="user_id" value="{{ Auth::user()->id }} " />
 
-
                     </form>
 
                     <h1 class="mx-1 mt-4 px-2 text-xl border-b border-gray-300">{{ __('Image list: ') }}</h1>
                     <x-storage :imgFiles="$images" :newsStorage=true />
 
-
                 </div>
-
-
-
 
             </div>
         </div>

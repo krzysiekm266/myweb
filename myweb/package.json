@@ -22,5 +22,8 @@
         "postcss-nested": "^4.2",
         "tailwindcss": "^2.2.17",
         "vue-template-compiler": "^2.6.11"
+    },
+    "dependencies": {
+        "mailhog": "^4.16.0"
     }
 }

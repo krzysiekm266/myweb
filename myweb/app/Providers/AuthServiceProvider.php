@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
@@ -27,8 +28,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('store_image',fn(User $user) => in_array(Role::IS_ADMIN,$user->roles->modelKeys())  );
-        Gate::define('delete_image',fn(User $user) => in_array(Role::IS_ADMIN,$user->roles->modelKeys())  );
+        Gate::define('store_image',fn(User $user) =>   Auth::check() && $user->roles->contains(fn($role,$key)=> $key == Role::IS_ADMIN)  );
+        Gate::define('delete_image',fn(User $user) =>  Auth::check() && $user->roles->contains(fn($role,$key)=> $key == Role::IS_ADMIN) );
 
         //
     }

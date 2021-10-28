@@ -2,15 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\NewsRequest;
 use Illuminate\Http\Request;
-use App\Models\News;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Storage;
 
-class NewsController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +13,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-
-       return view('pages.news',['allNews' => News::orderBy('created_at','DESC')->get()]);
-
+        //
     }
 
     /**
@@ -29,17 +21,9 @@ class NewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
-        $this->authorize('create',News::class);
-
-        return view('pages.panel-news-editor',
-            [
-                'images'=>Storage::files('images'),
-                'img_path'=>$request->img_path,
-            ]
-        );
-
+        //
     }
 
     /**
@@ -48,13 +32,9 @@ class NewsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(NewsRequest $request)
+    public function store(Request $request)
     {
-       $this->authorize('create',News::class);
-
-        News::create( $request->validated())->save();
-
-        return back()->withErrors(['sucess'=>'News create.']);
+        //
     }
 
     /**
@@ -97,16 +77,8 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(News $news)
+    public function destroy($id)
     {
-
-        $this->authorize('delete',$news);
-
-        $newsAuthor=' temp';
-
-        $newsId = $news->id;
-        $news->delete();
-
-        return back()->withErrors(['sucess'=>'News  id: '.$newsId.'author: '.$newsAuthor.' deleted.']);
+        //
     }
 }

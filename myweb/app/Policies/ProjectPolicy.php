@@ -2,13 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\News;
-use App\Models\Role;
+use App\Models\Project;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Illuminate\Support\Facades\Auth;
 
-class NewsPolicy
+class ProjectPolicy
 {
     use HandlesAuthorization;
 
@@ -27,10 +25,10 @@ class NewsPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\News  $news
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, News $news)
+    public function view(User $user, Project $project)
     {
         //
     }
@@ -43,19 +41,17 @@ class NewsPolicy
      */
     public function create(User $user)
     {
-
-        return Auth::check() && $user->roles->contains(fn($role,$roleId)=>$roleId == Role::IS_ADMIN);
-
+        //
     }
 
     /**
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\News  $news
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, News $news)
+    public function update(User $user, Project $project)
     {
         //
     }
@@ -64,23 +60,22 @@ class NewsPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\News  $news
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, News $news)
+    public function delete(User $user, Project $project)
     {
-        return (Auth::check() && $user->roles->contains(fn($roles,$rolesId)=>$rolesId == Role::IS_ADMIN)) ||
-               (Auth::check() && $news->user_id == Auth::user()->id );
+        //
     }
 
     /**
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\News  $news
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, News $news)
+    public function restore(User $user, Project $project)
     {
         //
     }
@@ -89,10 +84,10 @@ class NewsPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\News  $news
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, News $news)
+    public function forceDelete(User $user, Project $project)
     {
         //
     }

@@ -24,8 +24,9 @@
                 </div>
 
                 <x-auth-validation-errors class="m-1 mb-4 w-max-content sm:w-1/2 sm:mx-auto" :errors="$errors"/>
+
                 {{-- Email settings --}}
-                <div  class="p-6 pb-0 bg-white h-auto text-center">
+                <form action="{{ route('user.update.email') }}" method="post"  class="p-6 pb-0 bg-white h-auto text-center">
 
                     <x-label class="my-1 mb-6 font-semibold  w-full sm:w-1/2 sm:mx-auto">
                         {{ __('Your current e-mail:' ) }}
@@ -34,35 +35,37 @@
                         </span>
                     </x-label>
 
-                    <form id="email" action="{{ route('user.update.email') }}" method="POST" class="w-max-content border-t border-gray-200 flex flex-col">
+                    <div class="w-max-content border-t border-gray-200 flex flex-col">
                         @csrf
                         <x-label for="email"  class="text-left m-1 w-max-content sm:w-1/2 sm:mx-auto">
                             {{ __('Change your e-mail:') }}
                         </x-label>
 
-                        <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="email" name="new_email"          id="new-email"          placeholder="new e-mail" required />
+                        <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="email" name="new_email"          id="new-email"          placeholder="new e-mail" value="{{ old('new_email') }}" required />
                         <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="email" name="new_email_confirmation" id="new-email-confirmation"  placeholder="confirm e-mail" required />
-                        <x-button class=" m-1 w-max-content sm:w-1/2 sm:mx-auto">
+                        <x-button class=" m-1 w-max-content sm:w-1/2 sm:mx-auto" >
                             {{ __('Confirm') }}
                         </x-button>
-                    </form>
-                </div>
-
+                    </div>
+                </form>
                 {{-- Password settings --}}
-                <div  class="p-6  bg-white h-auto">
-                    <form id="password" action="{{ route('user.update.email') }}" method="POST" class="w-max-content border-t border-gray-200 flex flex-col">
+                <form action="{{ route('user.update.password') }}" method="post"  class="p-6  bg-white h-auto">
+                    <div class="w-max-content border-t border-gray-200 flex flex-col">
                         @csrf
                         <x-label for="password" class="m-1 w-max-content sm:w-1/2 sm:mx-auto">
                             {{ __('Change your password:') }}
                         </x-label>
 
-                        <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="password" name="new_password" id="new-password" placeholder="new password" required/>
+                        <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="password" name="new_password" id="new-password" placeholder="new password"  required/>
                         <x-input class="m-1 w-max-content sm:w-1/2 sm:mx-auto" type="password" name="new_password_confirmation"  id="new-password-confirmation"  placeholder="confirm password" required />
-                        <x-button class="m-1 w-max-content sm:w-1/2 sm:mx-auto">
+                        <x-button class="m-1 w-max-content sm:w-1/2 sm:mx-auto" formaction="{{ route('user.update.password') }}">
                             {{ __('Confirm') }}
                         </x-button>
-                    </form>
-                </div>
+                    </div>
+                </form>
+
+
+
             </div>
         </div>
     </div>

@@ -19,6 +19,9 @@ Route::group(
         'as'=>'user.',
     ],
     function () {
-        Route::post('update-email', [UserController::class,'update'])->name('update.email');
+        Route::post('update', [UserController::class,'update'])->name('update');
+        Route::post('update-email', [UserController::class,'updateEmail'])->name('update.email');
+        Route::post('update-password', [UserController::class,'updatePassword'])->name('update.password');
+
 
 });
