@@ -16,7 +16,7 @@
             <form action="{{ route('storage.delete') }}" method="POST" class="flex flex-col">
                 @csrf
                 <input type="text" name="img_path" value="{{ $img }}" hidden>
-                <x-button class="w-3/4 mx-auto ">
+                <x-button class="w-3/4 mx-auto mb-2">
                     {{ __('Delete') }}
                 </x-button>
 
@@ -28,11 +28,12 @@
             <form action="{{ route('news.create') }}" method="POST" class="flex flex-col">
                 @csrf
                 <input type="text" name="img_path" value="{{ $img }}" hidden>
-                <x-button class="w-3/4 mx-auto ">
+                <x-button class="w-3/4 mx-auto mb-2">
                     {{ __('Select') }}
                 </x-button>
 
             </form>
+
             @endif
         </div>
 

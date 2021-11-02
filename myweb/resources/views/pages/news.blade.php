@@ -14,14 +14,12 @@
         </div>
     </x-slot>
 
-    <div class="pt-12 pb-2 md:w-1/2 mx-auto">
+    <div class="pt-12 pb-2 md:w-3/4 mx-auto">
         <div class="max-w-7xl mx-auto ">
             <div class="bg-gray-100 ">
                 <x-auth-validation-errors class="m-4" :errors="$errors"/>
                 <x-content-layout class=" ">
                     <x-single-news />
-
-
 
                     @isset($allNews)
                       @foreach ($allNews as $news)
@@ -29,7 +27,6 @@
                         <x-single-news :news="$news" />
 
                       @endforeach
-
                     @endisset
 
                 </x-content-layout>

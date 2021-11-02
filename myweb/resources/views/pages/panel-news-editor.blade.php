@@ -1,5 +1,7 @@
+
 @php
     $pTitle="News Editor";
+
 @endphp
 <x-app-layout >
     <x-slot name="pageTitle">
@@ -15,9 +17,9 @@
     </x-slot>
 
     {{-- default slot/page content --}}
-    <div class=" md:w-1/2 mx-auto h-auto ">
-        <div class="max-w-7xl mx-auto px-2 ">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-md">
+    <div class=" md:w-1/2 mx-auto h-auto pb-4">
+        <div class="max-w-7xl mx-auto px-2 h-auto ">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-md h-auto ">
                 <div class="p-4 bg-white border-b border-gray-200 w-full text-center">
                     You're logged in!
                     Welcome to News Editor.
@@ -31,11 +33,16 @@
                         @csrf
                         <x-auth-validation-errors class="m-4" :errors="$errors"/>
 
+                        <x-label for="img_path" class="m-1 ">
+                            {{ __('Selected image:') }}
+                        </x-label>
+                        <img src="{{ asset($img_path ) }}" alt="" class="w-40 h-40 mb-2">
+
                         <x-label for="title" class="m-1 " >
                             {{ __('News title:') }}
                         </x-label>
                         <x-input class="m-1 mb-2 w-full" type="text" name="title" id="title" placeholder="title..."
-                            value="{{ old('title') ?? $request->session()->get('title', 'default'); $request->session()->put('title', old('title') ) }}" />
+                            value="{{ old('title') ?? session()->get('titleOld') }}" />
                         {{-- do sprawdzenia --}}
                         <x-label for="body" class="m-1">
                             {{ __('News body:') }}
@@ -48,10 +55,8 @@
                             {{ __('Create') }}
                         </x-button>
 
-                        <x-label for="img_path" class="m-1 ">
-                            {{ __('Selected image:') }}
-                        </x-label>
-                        <img src="{{ asset($img_path) }}" alt="" class="w-40 h-40 mb-2">
+
+
                         <x-input class="m-1 hidden" type="text" name="img_path" id="img_path"  value="{{ $img_path }} " />
 
                         <x-input class="m-1 hidden" type="number" name="user_id" id="user_id" value="{{ Auth::user()->id }} " />

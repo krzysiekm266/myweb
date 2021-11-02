@@ -18,7 +18,11 @@
         <div class="max-w-7xl mx-auto ">
             <div class="bg-gray-100 ">
                 <x-content-layout>
-                    About
+                    Cześć Nazywam się Krzysiek jestem programistą samoukiem.
+                    Intersuje się głównie językami programowania:java i php ale dodatkowo używam też: html,css,tailwind,js,maven,git
+                    W ostatnim czasie postanowiłem nauczyć się  Laravel framework.
+                    Strona powstała przy użuciu wyżej wymienionego frameworka jako cześć mojego CV .
+                    Więcej informacji o tym i o innych moich projektach w zakladce Projekty.
 
                 </x-content-layout>
             </div>

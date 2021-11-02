@@ -40,10 +40,7 @@ class StorageController extends Controller
     public function store(StorageRequest $request)
     {
 
-    //    $request->validate([
-    //        'img_input'=>'required ',
-    //        'img_filename'=>'required',
-    //    ]);
+
          $this->authorize('store_image');
 
         $filename = $request->input('img_filename');

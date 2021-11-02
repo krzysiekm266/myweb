@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\NewsRequest;
+use App\Models\Image;
 use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\User;
@@ -37,6 +38,7 @@ class NewsController extends Controller
             [
                 'images'=>Storage::files('images'),
                 'img_path'=>$request->img_path,
+
             ]
         );
 
@@ -53,6 +55,8 @@ class NewsController extends Controller
        $this->authorize('create',News::class);
 
         News::create( $request->validated())->save();
+
+        $request->registerImage();
 
         return back()->withErrors(['sucess'=>'News create.']);
     }
@@ -102,11 +106,25 @@ class NewsController extends Controller
 
         $this->authorize('delete',$news);
 
-        $newsAuthor=' temp';
+        $newsAuthor= $news->user->name;
+        $newsTitle = $news->title;//poprawic
+        $img = Image::where('path',$news->img_path)->first() ?? null;
+        if($img?->counter == 1)
+        {
+            $img->delete();
+        }
+        elseif($img != null)
+        {
+            $img->counter--;
+            $img->save();
+        }
+        else
+        {
+            return back()->withErrors(['error_img_not_register'=>'I cant delete this news. Image path is not registered']);
+        }
 
-        $newsId = $news->id;
         $news->delete();
 
-        return back()->withErrors(['sucess'=>'News  id: '.$newsId.'author: '.$newsAuthor.' deleted.']);
+        return back()->withErrors(['sucess'=>'News: '.$newsTitle.'author: '.$newsAuthor.' deleted.']);
     }
 }

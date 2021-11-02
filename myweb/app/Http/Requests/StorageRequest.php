@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Image;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StorageRequest extends FormRequest
@@ -13,7 +14,7 @@ class StorageRequest extends FormRequest
      */
     public function authorize()
     {
-        // return $this->authorize('store_image');
+
         return true;
     }
 
@@ -29,4 +30,8 @@ class StorageRequest extends FormRequest
             'img_filename'=>'required',
         ];
     }
+
+
+
+
 }

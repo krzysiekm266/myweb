@@ -7,8 +7,6 @@
 
 <div class="flex flex-col">
 
-    <!-- Very little is needed to make a happy life. - Marcus Antoninus -->
-
     <div class="flex flex-row items-center">
         <x-label for="img-input" class="flex items-center  justify-between m-1   w-full h-12
                     px-4 pr-0 py-0 bg-gray-800 border border-none rounded-md  font-semibold text-xs text-white
