@@ -1,16 +1,16 @@
 @props(['news'=> null ])
 @php
 
-    $imgPath = $news->img_path ?? ' ';
+    // $imgPath = $news->img_path ?? ' ';
 
-    $title = $news->title ?? ' default title';
-    $body = $news->body ??  'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore autem neque voluptatum quis
-                            labore quae, deserunt iste ducimus cumque  laudantium numquam aliquam adipisci facilis distinctio
-                            magnam atque, similique quod asperiores?Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                            Ab esse repellat atque facere odio expedita, officiis eligendi vel, voluptatum,
-                            dolor a est at optio architecto laborum labore fugit quasi iusto?';
-    $author = $news->user->name ?? 'default author ';
-    $created_at = $news->created_at ?? ' --';
+    // $title = $news->title ?? ' default title';
+    // $body = $news->body ??  'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore autem neque voluptatum quis
+    //                         labore quae, deserunt iste ducimus cumque  laudantium numquam aliquam adipisci facilis distinctio
+    //                         magnam atque, similique quod asperiores?Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+    //                         Ab esse repellat atque facere odio expedita, officiis eligendi vel, voluptatum,
+    //                         dolor a est at optio architecto laborum labore fugit quasi iusto?';
+    // $author = $news->user->name ?? 'default author ';
+    // $created_at = $news->created_at ?? ' --';
       // $id = $news->user_id ?? ' default id';
 
 
@@ -21,25 +21,29 @@
 <div class="flex flex-col m-2 w-full ">
     <div  class="flex self-start  mt-2 ml-2  text-left  h-auto">
         <h1 class=" inline-flex text-xl  px-2   ">
-            {{ $title }}
+            {{ $news?->title ?? 'default title'; }}
         </h1>
     </div>
 
     <div  class="flex self-start  m-2 mt-0 pt-3  text-left  h-auto border-t border-gray-400">
         <p class=" inline-flex text-xs  px-2  rounded-md">
-            {{ __('Author: '.$author) }}
+            {{ __('Author: '.($news?->user->name ?? 'default author')) }}
         </p>
         <p class=" inline-flex text-xs  px-2  rounded-md">
-            {{ __('Created: '.$created_at) }}
+            {{ __('Created: '.($news?->created_at ?? '--')) }}
         </p>
     </div>
 
     <div class=" flex flex-col  m-2 mb-0 w-max-content   ">
 
         <div class="p-2  flex flex-col md:flex-row">
-            <img class="block rounded-md w-60 h-40 bg-main float-left m-2 " src="{{ asset($imgPath)}}" />
+            <img class="block rounded-md w-60 h-40 bg-main float-left m-2 " src="{{ asset($news?->imgPath ?? '')}}" />
             <p class="m-2 ">
-                {{  $body }}
+                {{  $news?->body ?? 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore autem neque voluptatum quis
+                labore quae, deserunt iste ducimus cumque  laudantium numquam aliquam adipisci facilis distinctio
+                magnam atque, similique quod asperiores?Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Ab esse repellat atque facere odio expedita, officiis eligendi vel, voluptatum,
+                dolor a est at optio architecto laborum labore fugit quasi iusto?';}}
             </p>
 
         </div>

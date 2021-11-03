@@ -15,11 +15,11 @@ Route::group(
     [
         'middleware'=>'auth',
         'prefix'=>'panel/storage',
-        'as'=>'storage.',
+        'as'=>'storage',
     ],
     function () {
-        Route::get('create',[StorageController::class,'create'])->name('create');
-        Route::post('add-image',[StorageController::class,'store'])->name('store');
-        Route::post('delete',[StorageController::class,'destroy'])->name('delete')->middleware('isImageRegistered:img_path');
+        Route::get('create',[StorageController::class,'create'])->name('.create');
+        Route::post('add-image',[StorageController::class,'store'])->name('.store');
+        Route::post('delete',[StorageController::class,'destroy'])->name('.delete')->middleware('isImageRegistered:img_path');
 
 });

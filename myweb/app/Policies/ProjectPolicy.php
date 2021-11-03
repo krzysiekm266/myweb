@@ -3,8 +3,10 @@
 namespace App\Policies;
 
 use App\Models\Project;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectPolicy
 {
@@ -41,7 +43,9 @@ class ProjectPolicy
      */
     public function create(User $user)
     {
-        //
+
+        // return Auth::check() && $user->roles->contains(fn($role,$roleId)=>$roleId == Role::IS_ADMIN);
+        return Auth::check() && $user->roles->contains('id', Role::IS_ADMIN);
     }
 
     /**
@@ -65,7 +69,7 @@ class ProjectPolicy
      */
     public function delete(User $user, Project $project)
     {
-        //
+        return Auth::check() && $user->roles()->contains('id',Role::IS_ADMIN) || (Auth::check() && $project->user->id == Auth::user()->id );
     }
 
     /**

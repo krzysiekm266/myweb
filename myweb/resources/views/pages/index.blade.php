@@ -14,7 +14,7 @@
         </div>
     </x-slot>
 
-    <div class=" py-12 w-3/4  md:w-3/6 mx-auto " >
+    <div class=" py-12 w-3/4  md:w-3/6 mx-auto p-2" >
         <div class=" mx-auto">
             <div class="bg-white  shadow-sm mx-auto  rounded-md h-auto ">
                 <div class=" h-auto w-full mx-auto relative">

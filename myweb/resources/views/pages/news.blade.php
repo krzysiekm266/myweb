@@ -1,7 +1,7 @@
 @php
     $pTitle="News";
 @endphp
-<x-app-layout>
+<x-app-layout >
     <x-slot name="pageTitle">
         {{ $pTitle }}
     </x-slot>
@@ -14,7 +14,7 @@
         </div>
     </x-slot>
 
-    <div class="pt-12 pb-2 md:w-3/4 mx-auto">
+    <div class="pt-12 pb-2 md:w-3/4 mx-auto p-2">
         <div class="max-w-7xl mx-auto ">
             <div class="bg-gray-100 ">
                 <x-auth-validation-errors class="m-4" :errors="$errors"/>

@@ -1,7 +1,7 @@
 @php
     $pTitle="Projects";
 @endphp
-<x-app-layout>
+<x-app-layout >
     <x-slot name="pageTitle">
         {{ $pTitle }}
     </x-slot>
@@ -14,11 +14,18 @@
         </div>
     </x-slot>
 
-    <div class="pt-12 pb-2 md:w-1/2 mx-auto">
+    <div class="pt-12 pb-2 md:w-1/2 mx-auto p-2">
         <div class="max-w-7xl mx-auto ">
             <div class="bg-gray-100 ">
+                <x-auth-validation-errors class="my-4" :errors="$errors"/>
                 <x-content-layout>
-                    Projects
+                    @isset($allProjects)
+                      @foreach ($allProjects as $project)
+
+                        <x-single-project :project="$project" />
+
+                      @endforeach
+                    @endisset
 
                 </x-content-layout>
             </div>

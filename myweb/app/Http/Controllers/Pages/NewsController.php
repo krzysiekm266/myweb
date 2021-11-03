@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Pages;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\NewsRequest;
 use App\Models\Image;
 use Illuminate\Http\Request;
@@ -34,7 +35,7 @@ class NewsController extends Controller
     {
         $this->authorize('create',News::class);
 
-        return view('pages.panel-news-editor',
+        return view('pages.panel-news',
             [
                 'images'=>Storage::files('images'),
                 'img_path'=>$request->img_path,

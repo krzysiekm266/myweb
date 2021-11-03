@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,6 +18,8 @@ class CreateProjectsTable extends Migration
             $table->id();
             $table->string('name');
             $table->longText('description');
+            $table->text('link')->nullable();
+            $table->foreignIdFor(User::class)->constrained()->onDelete('cascade')->onUpdate('cascade');;
             $table->timestamps();
         });
     }

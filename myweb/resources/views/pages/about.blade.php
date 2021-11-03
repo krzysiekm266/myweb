@@ -1,7 +1,7 @@
 @php
     $pTitle="About";
 @endphp
-<x-app-layout>
+<x-app-layout >
     <x-slot name="pageTitle">
         {{ $pTitle }}
     </x-slot>
@@ -14,10 +14,10 @@
         </div>
     </x-slot>
 
-    <div class="pt-12 pb-2 md:w-1/2 mx-auto">
+    <div class="pt-12 pb-2 md:w-1/2 mx-auto p-2">
         <div class="max-w-7xl mx-auto ">
             <div class="bg-gray-100 ">
-                <x-content-layout>
+                <x-content-layout class="p-2">
                     Cześć Nazywam się Krzysiek jestem programistą samoukiem.
                     Intersuje się głównie językami programowania:java i php ale dodatkowo używam też: html,css,tailwind,js,maven,git
                     W ostatnim czasie postanowiłem nauczyć się  Laravel framework.

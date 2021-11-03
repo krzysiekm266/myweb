@@ -1,22 +1,20 @@
 <?php
 
-use App\Http\Controllers\PagesController;
-use App\Http\Controllers\NewsController;
+use App\Http\Controllers\Pages\PanelController;
 use Illuminate\Support\Facades\Route;
-
-
-// Route::middleware(['auth'])->get('/panel',[PagesController::class,'panel'])->name('panel');
-// Route::middleware(['auth'])->get('/panel/news/create',[NewsController::class,'create'])->name('news.create');
 
 Route::group(
     [
         'middleware'=>'auth',
-        'prefix'=>'panel'
+        'prefix'=>'panel',
+        'as'=>'panel',
+
     ],
     function () {
-        Route::get('/profile',[PagesController::class,'panel'])->name('panel');
+        Route::get('/',[PanelController::class,'index']);
+        Route::get('profile',[PanelController::class,'profile'])->name('.profile');
     }
-);
+ );
 
 
 

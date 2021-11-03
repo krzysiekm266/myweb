@@ -26,6 +26,7 @@ class ProjectRequest extends FormRequest
         return [
             'name'=>['required','string','max:100','unique:projects'],
             'description'=>['required','string'],
+            'link'=>['string','max:200'],
         ];
     }
 }

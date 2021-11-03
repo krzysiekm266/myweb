@@ -18,7 +18,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
 
     </head>
-    <body  class="font-sans antialiased relative">
+    <body  class="font-sans antialiased relative overflow-y-scroll"">
         <div {{ $attributes->merge(['class'=>'bg-gray-100 min-h-screen ']) }}>
             <!-- Main navigation -->
             <x-navigation>

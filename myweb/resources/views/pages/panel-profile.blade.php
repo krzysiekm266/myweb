@@ -1,7 +1,7 @@
 @php
     $pTitle="Profile";
 @endphp
-<x-app-layout >
+<x-app-layout  >
     <x-slot name="pageTitle">
         {{ $pTitle }}
     </x-slot>
@@ -15,19 +15,18 @@
     </x-slot>
 
     {{-- default slot/page content --}}
-    <div class="mx-auto ">
-        <div class="max-w-7xl mx-auto border ">
-            <div class="bg-white  shadow-sm sm:rounded-md  ">
-                <div class="p-4 bg-white border-b border-gray-200 text-center">
-                    You're logged in!
-                    Welcome to Administrator Panel.
-                </div>
+    <div class=" md:w-3/4 lg:w-1/2 mx-auto p-2">
+        <div class="p-4  mb-2 mx-2 bg-white border-b border-gray-200 w-max-content text-center rounded-md ">
+            You're logged in!
+            Welcome to  Administrator Profile.
+        </div>
 
-                <x-auth-validation-errors class="m-1 mb-4 w-max-content sm:w-1/2 sm:mx-auto" :errors="$errors"/>
-
+        <div class="max-w-7xl px-2 mx-auto  ">
+            <div class="bg-white  shadow-sm rounded-md h-auto p-2">
+                <x-auth-validation-errors class="my-4 w-max-content sm:w-1/2 sm:mx-auto" :errors="$errors"/>
                 {{-- Email settings --}}
                 <form action="{{ route('user.update.email') }}" method="post"  class="p-6 pb-0 bg-white h-auto text-center">
-
+                    @csrf
                     <x-label class="my-1 mb-6 font-semibold  w-full sm:w-1/2 sm:mx-auto">
                         {{ __('Your current e-mail:' ) }}
                         <span class="font-bold text-base">
@@ -36,7 +35,6 @@
                     </x-label>
 
                     <div class="w-max-content border-t border-gray-200 flex flex-col">
-                        @csrf
                         <x-label for="email"  class="text-left m-1 w-max-content sm:w-1/2 sm:mx-auto">
                             {{ __('Change your e-mail:') }}
                         </x-label>
@@ -48,10 +46,12 @@
                         </x-button>
                     </div>
                 </form>
+
                 {{-- Password settings --}}
                 <form action="{{ route('user.update.password') }}" method="post"  class="p-6  bg-white h-auto">
+                    @csrf
                     <div class="w-max-content border-t border-gray-200 flex flex-col">
-                        @csrf
+
                         <x-label for="password" class="m-1 w-max-content sm:w-1/2 sm:mx-auto">
                             {{ __('Change your password:') }}
                         </x-label>
