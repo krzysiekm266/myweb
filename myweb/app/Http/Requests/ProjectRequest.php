@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Project;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ProjectRequest extends FormRequest
@@ -13,6 +14,7 @@ class ProjectRequest extends FormRequest
      */
     public function authorize()
     {
+        // return $this->user()->can('create',Project::class);
         return true;
     }
 
@@ -26,7 +28,8 @@ class ProjectRequest extends FormRequest
         return [
             'name'=>['required','string','max:100','unique:projects'],
             'description'=>['required','string'],
-            'link'=>['string','max:200'],
+            'link'=>['url','max:200'],
+            'user_id'=>['required'],
         ];
     }
 }

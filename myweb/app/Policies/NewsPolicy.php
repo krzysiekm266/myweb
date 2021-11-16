@@ -44,7 +44,7 @@ class NewsPolicy
     public function create(User $user)
     {
 
-        return Auth::check() && $user->roles->contains(fn($role,$roleId)=>$roleId == Role::IS_ADMIN);
+        return Auth::check() && $user->roles->contains('id',Role::IS_ADMIN);
 
     }
 
@@ -57,7 +57,8 @@ class NewsPolicy
      */
     public function update(User $user, News $news)
     {
-        //
+        return (Auth::check() && $user->roles->contains('id',Role::IS_ADMIN) ) ||
+               (Auth::check() && $news->user->id == Auth::user()->id );
     }
 
     /**
@@ -69,8 +70,8 @@ class NewsPolicy
      */
     public function delete(User $user, News $news)
     {
-        return (Auth::check() && $user->roles->contains(fn($roles,$rolesId)=>$rolesId == Role::IS_ADMIN)) ||
-               (Auth::check() && $news->user_id == Auth::user()->id );
+        return (Auth::check() && $user->roles->contains('id',Role::IS_ADMIN) ) ||
+               (Auth::check() && $news->user->id == Auth::user()->id );
     }
 
     /**

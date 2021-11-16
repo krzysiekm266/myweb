@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
 use GuzzleHttp\Handler\Proxy;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -37,9 +39,13 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProjectRequest $request)
     {
-        //
+        $this->authorize('create',Project::class);
+
+        Project::create($request->validated())->save();
+
+        return back()->withErrors(['sucess'=>'Project '.$request->input('name').' create.']);
     }
 
     /**
@@ -89,6 +95,7 @@ class ProjectController extends Controller
         $projectAuthor = $project->user->name;
         $projectName = $project->name;
 
-        return back()->withErrors(['sucess'=>'Project: '.$projectName.'author: '.$projectAuthor.' deleted.']);
+        return  $project->delete() ? back()->withErrors(['sucess'=>'Project: '.$projectName.'author: '.$projectAuthor.' deleted.'])
+                                    :  back()->withErrors(['error'=>'Project: '.$projectName.'author: '.$projectAuthor.' cant be deleted!.']) ;
     }
 }

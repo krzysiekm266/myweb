@@ -1,7 +1,7 @@
 <div class="w-full mt-1  h-auto sm:h-44 bg-gray-900  bottom-0 text-gray-200 items-center justify-between text-center flex sm:flex-row flex-col">
     <div class="mx-auto sm:ml-4 flex flex-col items-baseline">
         <a href="{{ route('index') }}">
-            <x-application-logo class="block h-36 w-36 fill-current text-gray-400 " />
+            <x-application-logo class="block h-28 w-28 fill-current text-gray-400 " />
         </a>
         <p class="text-gray-500 text-xs font-bold uppercase mt-2 text-center ">
             Created: 2021 by: krzysiekm

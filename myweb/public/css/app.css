@@ -18015,6 +18015,10 @@ select {
   background-image: url('/storage/images/background3.jpg');
 }
 
+.bg-github {
+  background-image: url('/storage/images/GitHub-Mark-32px.png');
+}
+
 .from-transparent {
   --tw-gradient-from: transparent;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -49372,6 +49376,10 @@ select {
     background-image: url('/storage/images/background3.jpg');
   }
 
+  .sm\:bg-github {
+    background-image: url('/storage/images/GitHub-Mark-32px.png');
+  }
+
   .sm\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -80715,6 +80723,10 @@ select {
 
   .md\:bg-main {
     background-image: url('/storage/images/background3.jpg');
+  }
+
+  .md\:bg-github {
+    background-image: url('/storage/images/GitHub-Mark-32px.png');
   }
 
   .md\:from-transparent {
@@ -112062,6 +112074,10 @@ select {
     background-image: url('/storage/images/background3.jpg');
   }
 
+  .lg\:bg-github {
+    background-image: url('/storage/images/GitHub-Mark-32px.png');
+  }
+
   .lg\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -143407,6 +143423,10 @@ select {
     background-image: url('/storage/images/background3.jpg');
   }
 
+  .xl\:bg-github {
+    background-image: url('/storage/images/GitHub-Mark-32px.png');
+  }
+
   .xl\:from-transparent {
     --tw-gradient-from: transparent;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(0, 0, 0, 0));
@@ -174750,6 +174770,10 @@ select {
 
   .\32xl\:bg-main {
     background-image: url('/storage/images/background3.jpg');
+  }
+
+  .\32xl\:bg-github {
+    background-image: url('/storage/images/GitHub-Mark-32px.png');
   }
 
   .\32xl\:from-transparent {

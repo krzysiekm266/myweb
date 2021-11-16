@@ -4030,7 +4030,10 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 var _require = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
-    upperCase = _require.upperCase;
+    upperCase = _require.upperCase,
+    isEmpty = _require.isEmpty,
+    isNull = _require.isNull,
+    isUndefined = _require.isUndefined;
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
@@ -4038,6 +4041,11 @@ __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
 function setupInputImage() {
   var imgInput = document.getElementById('img-input');
+
+  if (!imgInput) {
+    return;
+  }
+
   var imgFilename = document.getElementById('img-filename');
   var imgPath = document.getElementById('img-path');
   var imgPreview = document.getElementById('img-preview');
@@ -4052,7 +4060,9 @@ function setupInputImage() {
   });
 }
 
-document.addEventListener('onload', setupInputImage());
+window.addEventListener('load', function () {
+  setupInputImage();
+}, false);
 
 /***/ }),
 

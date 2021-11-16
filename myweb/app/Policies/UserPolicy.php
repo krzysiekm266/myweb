@@ -55,7 +55,7 @@ class UserPolicy
     public function update(User $user)
     {
         // return Auth::check() && $user->roles->contains('id',Role::IS_ADMIN) ;do przetestowania
-        return Auth::check() && $user->roles->contains(fn($role,$roleId)=> $roleId == Role::IS_ADMIN) ;
+        return Auth::check() && $user->roles->contains('id',Role::IS_ADMIN);
     }
 
     /**

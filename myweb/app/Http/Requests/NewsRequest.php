@@ -15,6 +15,7 @@ class NewsRequest extends FormRequest
      */
     public function authorize()
     {
+
         return true;
 
     }
@@ -30,7 +31,8 @@ class NewsRequest extends FormRequest
             'title' => ['required', 'string','max:100','min:5','unique:news' ],
             'body' => ['required', 'string','max:600'],
             'img_path' => ['required' ,'string','max:100'],
-            'user_id'=>['required']
+            'user_id'=>['required'],
+
         ];
     }
 

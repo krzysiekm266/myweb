@@ -37,8 +37,11 @@ class NewsController extends Controller
 
         return view('pages.panel-news',
             [
+
                 'images'=>Storage::files('images'),
                 'img_path'=>$request->img_path,
+                'temp_body'=>session()->get('s_body'),
+
 
             ]
         );
@@ -53,13 +56,13 @@ class NewsController extends Controller
      */
     public function store(NewsRequest $request)
     {
-       $this->authorize('create',News::class);
+        $this->authorize('create',News::class);
 
         News::create( $request->validated())->save();
 
         $request->registerImage();
 
-        return back()->withErrors(['sucess'=>'News create.']);
+        return redirect()->route('news.create')->withErrors(['sucess'=>'News '.$request->input('title').' create.']);
     }
 
     /**
@@ -70,7 +73,7 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -79,9 +82,15 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(News $news)
     {
-        //
+        $this->authorize('update',$news);
+        return view('pages.panel-news-edit',[
+
+            'news'=>$news,
+            'images'=>Storage::files('images'),
+
+        ]);
     }
 
     /**
@@ -91,9 +100,15 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(NewsRequest $request, News $news)
     {
-        //
+        $this->authorize('update',$news);
+
+        return  $news->update($request->validated())
+            ? redirect()->route('news.create')->withErrors(['sucess'=>'News '.$news->title.' update.'])
+            : redirect()->route('news.create')->withErrors(['update_error'=>'News '.$news->title.' update error!.']);
+
+        // return redirect()->route('news.create')->withErrors(['sucess'=>'News '.$news->title.' update.']);
     }
 
     /**
@@ -108,7 +123,8 @@ class NewsController extends Controller
         $this->authorize('delete',$news);
 
         $newsAuthor= $news->user->name;
-        $newsTitle = $news->title;//poprawic
+        $newsTitle = $news->title;
+
         $img = Image::where('path',$news->img_path)->first() ?? null;
         if($img?->counter == 1)
         {
@@ -126,6 +142,6 @@ class NewsController extends Controller
 
         $news->delete();
 
-        return back()->withErrors(['sucess'=>'News: '.$newsTitle.'author: '.$newsAuthor.' deleted.']);
+        return back()->withErrors(['sucess'=>'News: '.$newsTitle.' author: '.$newsAuthor.' deleted.']);
     }
 }

@@ -14,11 +14,13 @@
         </div>
     </x-slot>
 
-    <div class="pt-12 pb-2 md:w-1/2 mx-auto p-2">
+    <div class="pt-12 pb-2 md:w-3/4 mx-auto p-2">
         <div class="max-w-7xl mx-auto ">
             <div class="bg-gray-100 ">
-                <x-auth-validation-errors class="my-4" :errors="$errors"/>
-                <x-content-layout>
+                <x-auth-validation-errors class="m-4" :errors="$errors"/>
+                <x-content-layout class=" p-2">
+                    <x-single-project />
+
                     @isset($allProjects)
                       @foreach ($allProjects as $project)
 

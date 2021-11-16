@@ -35,15 +35,17 @@
                 </form>
 
                 <h1 class="mx-1 mt-4 px-2 text-xl border-b border-gray-300">{{ __('Image list: ') }}</h1>
-                <x-storage :imgFiles="$images" :newsStorage=false />
+                <x-storage :imgFiles="$images" :delete="true" :select="false" />
 
             </div>
         </div>
+
     </div>
 
     <x-slot name="footer">
         {{-- <x-footer /> --}}
      </x-slot>
+
 </x-app-layout>
 
 

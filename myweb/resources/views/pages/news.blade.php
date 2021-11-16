@@ -14,12 +14,12 @@
         </div>
     </x-slot>
 
-    <div class="pt-12 pb-2 md:w-3/4 mx-auto p-2">
+    <div class="pt-12 pb-2 sm:w-3/4 mx-auto p-2">
         <div class="max-w-7xl mx-auto ">
             <div class="bg-gray-100 ">
                 <x-auth-validation-errors class="m-4" :errors="$errors"/>
-                <x-content-layout class=" ">
-                    <x-single-news />
+                <x-content-layout class="flex flex-col md:flex-wrap  md:flex-row items-center overflow-auto ">
+
 
                     @isset($allNews)
                       @foreach ($allNews as $news)

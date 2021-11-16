@@ -8,6 +8,13 @@ module.exports = {
     ],
 
     theme: {
+        extend:{
+            screens: {
+                'xs': '480px',
+            },
+
+        },
+
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
@@ -19,6 +26,7 @@ module.exports = {
             backgroundImage: theme => ({
 
                 'main': "url('/storage/images/background3.jpg')",
+                'github':"url('/storage/images/GitHub-Mark-32px.png')",
             }),
             inset: {
                 '33':'132px',

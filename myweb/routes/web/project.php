@@ -12,7 +12,7 @@ Route::group(
     function () {
         Route::get('create',[ProjectController::class,'create'])->name('.create');
         Route::post('store',[ProjectController::class,'store'])->name('.store');
-        Route::delete('delete/{project}',[ProjectController::class,'destroy'])->name('.delete');//dodac ograniczenie dla argumentu project
+        Route::delete('delete/{project}',[ProjectController::class,'destroy'])->name('.delete')->where('project','[A-Za-z0-9]+');
     }
 );
 
