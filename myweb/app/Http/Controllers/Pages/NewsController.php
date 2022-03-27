@@ -35,7 +35,7 @@ class NewsController extends Controller
     {
         $this->authorize('create',News::class);
 
-        return view('pages.panel-news',
+        return view('pages.panel-news-create',
             [
 
                 'images'=>Storage::files('images'),
@@ -82,13 +82,14 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(News $news)
+    public function edit(Request $request, News $news)
     {
         $this->authorize('update',$news);
         return view('pages.panel-news-edit',[
 
             'news'=>$news,
             'images'=>Storage::files('images'),
+            // 'img_path'=>$request->img_path,
 
         ]);
     }
@@ -105,8 +106,8 @@ class NewsController extends Controller
         $this->authorize('update',$news);
 
         return  $news->update($request->validated())
-            ? redirect()->route('news.create')->withErrors(['sucess'=>'News '.$news->title.' update.'])
-            : redirect()->route('news.create')->withErrors(['update_error'=>'News '.$news->title.' update error!.']);
+            ? redirect()->route('news')->withErrors(['sucess'=>'News '.$news->title.' update.'])
+            : redirect()->route('news')->withErrors(['update_error'=>'News '.$news->title.' update error!.']);
 
         // return redirect()->route('news.create')->withErrors(['sucess'=>'News '.$news->title.' update.']);
     }

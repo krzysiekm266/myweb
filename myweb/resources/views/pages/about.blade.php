@@ -8,7 +8,7 @@
 
     <x-slot name="header">
         <div class="hidden sm:flex sm:flex-col sm:items-center  sm:w-full">
-            <h2 class="flex sm:items-center font-semibold text-xl text-gray-800 leading-tight ">
+            <h2 class="flex sm:items-center font-semibold text-xl text-gray-500 leading-tight ">
                 {{ $pTitle }}
             </h2>
         </div>
@@ -22,7 +22,7 @@
                     Intersuje się głównie językami programowania:java i php ale dodatkowo używam też: html,css,tailwind,js,maven,git
                     W ostatnim czasie postanowiłem nauczyć się  Laravel framework.
                     Strona powstała przy użuciu wyżej wymienionego frameworka jako cześć mojego CV .
-                    Więcej informacji o tym i o innych moich projektach w zakladce Projekty.
+                    Więcej informacji o tym i o innych moich projektach w zakladce Projects.
 
                 </x-content-layout>
             </div>

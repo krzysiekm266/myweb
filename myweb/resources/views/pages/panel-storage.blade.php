@@ -8,7 +8,7 @@
 
     <x-slot name="header">
         <div class="hidden sm:flex sm:flex-col sm:items-center  w-full">
-            <h2 class="flex  sm:items-center font-semibold text-xl text-gray-800 leading-tight ">
+            <h2 class="flex  sm:items-center font-semibold text-xl text-gray-500 leading-tight ">
                 {{  $pTitle }}
             </h2>
         </div>
@@ -23,7 +23,7 @@
 
         <div class="max-w-7xl mx-auto px-2  ">
             <div class="bg-white overflow-hidden shadow-sm rounded-md">
-                <x-auth-validation-errors class="my-4" :errors="$errors"/>
+                <x-auth-validation-errors class="my-4 pl-6" :errors="$errors"/>
 
                 <form action="{{ route('storage.store') }}" method="POST" enctype="multipart/form-data" class="flex flex-col p-6">
                     @csrf

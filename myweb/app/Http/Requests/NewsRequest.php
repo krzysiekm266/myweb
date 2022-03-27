@@ -3,7 +3,9 @@
 namespace App\Http\Requests;
 
 use App\Models\Image;
+use App\Rules\ForUpdate;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class NewsRequest extends FormRequest
@@ -20,6 +22,7 @@ class NewsRequest extends FormRequest
 
     }
 
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -27,12 +30,18 @@ class NewsRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        return ($this->update ?? false)
+        ? [
+            'title' => ['required', 'string','max:100','min:5', new ForUpdate($this->input('news_id')) ],
+            'body' => ['required', 'string','max:600'],
+            'img_path' => ['required' ,'string','max:100'],
+            'user_id'=>['required'],
+        ]
+        : [
             'title' => ['required', 'string','max:100','min:5','unique:news' ],
             'body' => ['required', 'string','max:600'],
             'img_path' => ['required' ,'string','max:100'],
             'user_id'=>['required'],
-
         ];
     }
 
@@ -42,10 +51,8 @@ class NewsRequest extends FormRequest
      */
     public function registerImage()
     {
-        $img = Image::where('path',$this->input('img_path'))->first() ?? Image::create([
-                                                                                'path'=>$this->input('img_path'),
-                                                                                'counter'=>1,
-                                                                            ])->save();
+        $img = Image::where('path',$this->input('img_path'))->first()
+                    ?? Image::create(['path'=>$this->input('img_path'),'counter'=>1, ])->save();
 
         if( !is_bool($img) )
         {

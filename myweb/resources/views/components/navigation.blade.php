@@ -1,4 +1,4 @@
-<nav class="bg-white border-b border-gray-100 w-full mx-auto">
+<nav class="bg-gray-900 sm:border-b border-gray-100 w-full mx-auto ">
 
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto  inline justify-between">
@@ -9,7 +9,8 @@
                 <!-- Logo -->
                 <div class=" flex items-center ">
                     <a href="{{ route('index') }}">
-                        <x-application-logo class="block h-10 w-10 fill-current text-gray-600 " />
+                        <x-application-logo class="block h-10 w-10 fill-current text-gray-500 hover:text-green-500"
+                                :active="request()->is('/')" />
                     </a>
                 </div>
                 <!-- Responsive page title-->
@@ -60,7 +61,7 @@
             @else
                 @if (Route::has('login'))
                     <div class="flex items-center">
-                        <a href="{{ route('login') }}" class=" no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Login') }}</a>
+                        <a href="{{ route('login') }}" class=" no-underline hover:underline text-sm font-normal text-gray-500 uppercase">{{ __('Login') }}</a>
                     </div>
                 @endif
 

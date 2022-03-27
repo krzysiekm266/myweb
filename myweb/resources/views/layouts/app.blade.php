@@ -30,7 +30,7 @@
 
 
             <!-- Page Heading -->
-            <header class="bg-white  shadow  ">
+            <header class="bg-gray-900  shadow  ">
                 <div class="flex sm:space-x-6 max-w-7xl sm:mx-auto sm:py-6 sm:px-4" >
                     {{ $header }}
 

@@ -18,14 +18,14 @@
 
 
 @endphp
-<div class="flex flex-col m-2 w-3/4 md:w-2/5 h-auto mx-auto">
-    <div  class="flex self-start  mt-2 ml-2  text-left  h-auto">
-        <h1 class=" inline-flex text-lg  px-2   ">
+<div class="flex flex-col m-2 p-1 w-3/4 md:w-2/5 sm:m-4 sm:p-2 h-auto mx-auto  shadow-xl">
+    <div  class="flex self-start  mt-2 ml-2  text-left  h-auto w-full">
+        <h1 class=" inline-flex text-lg  px-2  bg-gray-800 shadow-md w-full text-gray-100 rounded-t-md">
             {{ $news?->title ?? 'default title'; }}
         </h1>
     </div>
 
-    <div  class="flex self-start  m-2 mt-0 pt-1  text-left  h-auto border-t border-gray-400">
+    <div  class="flex self-start  m-2 mt-0 pt-1  text-left  h-auto border-b border-gray-400">
         <p class=" inline-flex text-xs  px-1  mrounded-md font-semibold">
             {{ __('Created: '.($news?->created_at ?? '--')) }}
         </p>

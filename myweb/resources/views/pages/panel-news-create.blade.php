@@ -10,7 +10,7 @@
 
     <x-slot name="header">
         <div class="hidden sm:flex sm:flex-col sm:items-center  w-full">
-            <h2 class="flex  sm:items-center font-semibold text-xl text-gray-800 leading-tight ">
+            <h2 class="flex  sm:items-center font-semibold text-xl text-gray-500 leading-tight ">
                 {{ $pTitle }}
             </h2>
         </div>
@@ -29,7 +29,7 @@
                 <x-auth-validation-errors class="my-4 w-max-content sm:w-1/2 mx-4" :errors="$errors"/>
                 <form action="{{ route('news.store') }}" method="POST" class=" p-6 flex flex-col">
                     @csrf
-                    <x-label  class="w-1/2 mx-auto sm:w-1/5 sm:mx-0 p-0.5  text-center text-gray-600 border-t" >
+                    <x-label  class="w-1/2 mx-auto sm:w-1/5 sm:mx-0 p-0.5  text-center bg-gray-50 text-gray-600 border-t" >
                         <span class="font-semibold text-lg">Action: </span>
                         {{ __(' Create ') }}
                     </x-label>

@@ -8,7 +8,7 @@
 
     <x-slot name="header">
         <div class="hidden sm:flex sm:flex-col sm:items-center  w-full">
-            <h2 class="flex  sm:items-center font-semibold text-xl text-gray-800 leading-tight ">
+            <h2 class="flex  sm:items-center font-semibold text-xl text-gray-500 leading-tight ">
                 {{  $pTitle }}
             </h2>
         </div>

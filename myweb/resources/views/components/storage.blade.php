@@ -2,6 +2,7 @@
     'imgFiles'=>null,
     'delete'=>false,
     'select'=>false,
+
     ])
 
 <div class="flex flex-wrap p-1 mb-4">
@@ -30,17 +31,41 @@
 
                 </form>
 
+                <form action="{{ route('select') }}" method="POST" class="flex flex-col {{ $select ? ' ' : ' hidden'; }}">
+                    @csrf
+                    <input id="img-path" type="text" name="img" value="{{ $img }}" hidden>
+                    <x-button id="storage-select-img" class="w-3/4 mx-auto mb-2" >
+                        {{ __('Select PHP') }}
+                    </x-button>
+
+                </form>
+
+
+
+
+
             </div>
         @endforeach
+
     @endisset
 
 <script>
     function selectImage() {
+        // for createing news form
         let title = document.getElementById("news-title").value;
         let body = document.getElementById("news-body").value ;
 
         window.sessionStorage.setItem("title",title);
         window.sessionStorage.setItem("body",body);
+
+        //for updateing news form
+        let updateTitle = document.getElementById("update-news-title").value;
+        let updateBody = document.getElementById("update-news-body").value ;
+
+        window.sessionStorage.setItem("update-title",title);
+        window.sessionStorage.setItem("update-body",body);
+
+
     }
 </script>
 </div>

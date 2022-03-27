@@ -61,6 +61,25 @@ class ImageController extends Controller
     }
 
     /**
+     * Go to select form
+     *
+     */
+    public function selectForm(Request $request)
+    {
+      $this->authorize('create',Image::class);
+    }
+
+    /**
+     *
+     * Select image / return to create news page
+     */
+    public function select(Request $request)
+    {
+        $img = $request->img_path;
+        return $img;
+    }
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -83,9 +102,5 @@ class ImageController extends Controller
         //
     }
 
-    public function selectImage(Request $request)
-    {
-        $img = $request->img_path;
-        return $img;
-    }
+
 }

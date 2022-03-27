@@ -1,4 +1,4 @@
-<nav class="sm:hidden my-1">
+<nav class="sm:hidden m-0">
     <!-- Responsive navigation links -->
     @auth
     <div class="sm:hidden w-full">
@@ -15,15 +15,17 @@
     </div>
 
     <div class="sm:hidden w-full">
+        <x-responsive-nav-link :href="route('projects')" :active="request()->is('projects*')">
+            {{ __('Projects') }}
+        </x-responsive-nav-link>
+    </div>
+
+    <div class="sm:hidden w-full">
         <x-responsive-nav-link :href="route('about')" :active="request()->is('about')">
             {{ __('About') }}
         </x-responsive-nav-link>
     </div>
 
-    <div class="sm:hidden w-full">
-        <x-responsive-nav-link :href="route('projects')" :active="request()->is('projects*')">
-            {{ __('Projects') }}
-        </x-responsive-nav-link>
-    </div>
+
 
 </nav>

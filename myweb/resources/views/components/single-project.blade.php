@@ -3,7 +3,7 @@
 
 
 @endphp
-<div class="h-auto p-2 m-2 w-full border border-black">
+<div class="h-auto p-2 m-2 w-max-content border border-black">
     <h1 class="h-auto mb-4">
         {{ $project?->name ?? ' default project title'}}
     </h1>
