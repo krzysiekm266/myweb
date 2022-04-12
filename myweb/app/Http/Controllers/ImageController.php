@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Image;
+use App\Models\News;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -22,9 +25,13 @@ class ImageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return view('pages.panel-image-select',[
+            'edit'=>$request->input('edit'),
+            'images' => Storage::files('images'),
+
+        ]);
     }
 
     /**
@@ -61,22 +68,25 @@ class ImageController extends Controller
     }
 
     /**
-     * Go to select form
+     * Gconfirm selection and return to previous page(create  or edit news)
      *
      */
-    public function selectForm(Request $request)
+    public function selectConfirm(Request $request)
     {
-      $this->authorize('create',Image::class);
+        $this->authorize('create',Image::class);
+
+        return $request->input('edit') ? redirect()->route('news.edit.back',['id'=>$request->input('news_id')])->withInput() : redirect()->route('news.create')->withInput();
+
     }
 
     /**
      *
-     * Select image / return to create news page
+     * Select image
      */
     public function select(Request $request)
     {
-        $img = $request->img_path;
-        return $img;
+        $this->authorize('create',Image::class) ;
+        return redirect()->route('image.create')->withInput();
     }
 
     /**

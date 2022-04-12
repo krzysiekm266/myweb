@@ -51,9 +51,11 @@ class NewsRequest extends FormRequest
      */
     public function registerImage()
     {
+        //do poprawy
         $img = Image::where('path',$this->input('img_path'))->first()
                     ?? Image::create(['path'=>$this->input('img_path'),'counter'=>1, ])->save();
 
+                    //Image::contains(Image::where('path',$this->input('img_path'))->first());
         if( !is_bool($img) )
         {
             $img->counter++ ;

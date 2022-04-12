@@ -34,7 +34,16 @@
                         {{ __(' Create ') }}
                     </x-label>
                     <div class="w-max-content border-t p-2  border-gray-200 flex flex-col ">
+                        <div class="mx-auto">
+                            <x-label for="img_path" class="w-max-content ">
+                                {{ __('Selected image:') }}
+                            </x-label>
+                            <img id="img-preview" name="img_preview" src="{{ asset( $img_path ?? old('img_path')) }}" alt="" class="w-40 h-40 ">
+                        </div>
 
+                        <x-button id="select-image-button" formaction="{{ route('image.create') }}" formmethod="POST"  class=" w-3/4 mx-auto my-2 h-12">
+                            {{ __('Select image...') }}
+                        </x-button>
                         <x-label for="title" class="w-max-content " >
                             {{ __('News title:') }}
                         </x-label>
@@ -47,27 +56,22 @@
                         <textarea class=" w-max-content h-60 rounded-md shadow-sm border-gray-300
                                         focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="body" id="news-body"  >
 
-                            {{ old('body') }}
+                            {{ request()->input('body') ?? old('body') }}
                         </textarea>
 
                         <x-button id="create-news-button" class=" w-3/4 mx-auto my-2 h-12">
                             {{ __('Create News') }}
                         </x-button>
 
-                        <x-label for="img_path" class="w-max-content ">
-                            {{ __('Selected image:') }}
-                        </x-label>
-                        <img id="img-preview" name="img_preview" src="{{ asset( $img_path ?? old('img_path')) }}" alt="" class="w-40 h-40 ">
-
-                        <x-input class=" " type="text" name="img_path" id="img-path"  value="{{ $img_path ?? old('img_path') }} " />
-                        <x-input class=" hidden" type="number" name="user_id" id="user-id" value="{{ Auth::user()->id }} " />
+                        <x-input class=" " type="text" name="img_path" id="img-path"  value="{{ $img_path ?? old('img_path') }} " hidden/>
+                        <x-input class=" " type="number" name="user_id" id="user-id" value="{{ Auth::user()->id }} " hidden/>
 
                     </div>
 
                 </form>
 
-                <h1 class="mx-1 mt-4 px-2 text-xl border-b border-gray-300">{{ __('Image list: ') }}</h1>
-                <x-storage :imgFiles="$images" :delete="false" :select="true"/>
+                {{-- <h1 class="mx-1 mt-4 px-2 text-xl border-b border-gray-300">{{ __('Image list: ') }}</h1> --}}
+                {{-- <x-storage :imgFiles="$images" :delete="false" :select="true"/>  --}}
 
             </div>
         </div>
@@ -78,7 +82,7 @@
         {{-- <x-footer /> --}}
      </x-slot>
 
-    <script>
+    {{-- <script>
         window.addEventListener('load', ()=>{
             let title = document.getElementById("news-title");
             let body = document.getElementById("news-body");
@@ -99,5 +103,5 @@
 
         },false);
 
-    </script>
+    </script> --}}
 </x-app-layout>

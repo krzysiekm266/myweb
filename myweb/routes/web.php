@@ -23,6 +23,7 @@ require __DIR__.'/web/panel.php';
 require __DIR__.'/web/project.php';
 require __DIR__.'/web/storage.php';
 require __DIR__.'/web/user.php';
+require __DIR__.'/web/image.php';
 
 
 

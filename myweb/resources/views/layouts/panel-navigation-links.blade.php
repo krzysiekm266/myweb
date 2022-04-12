@@ -1,6 +1,6 @@
 <nav class=" flex p-2 mx-auto ">
     <div class="flex  flex-row  flex-wrap  mx-auto items-center  w-full justify-center" >
-        <x-panel-nav-link :href="route('panel')" :active="request()->is('panel')">
+        <x-panel-nav-link :href="route('panel.index')" :active="request()->is('panel')">
             {{ __('Panel') }}
         </x-panel-nav-link>
 

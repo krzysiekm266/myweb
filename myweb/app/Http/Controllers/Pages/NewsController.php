@@ -40,7 +40,7 @@ class NewsController extends Controller
 
                 'images'=>Storage::files('images'),
                 'img_path'=>$request->img_path,
-                'temp_body'=>session()->get('s_body'),
+                // 'temp_body'=>session()->get('s_body'),
 
 
             ]
@@ -86,11 +86,26 @@ class NewsController extends Controller
     {
         $this->authorize('update',$news);
         return view('pages.panel-news-edit',[
-
+            'edit'=>'true',
             'news'=>$news,
-            'images'=>Storage::files('images'),
-            // 'img_path'=>$request->img_path,
 
+        ]);
+
+    }
+/**
+     * back to edit form from image selection.
+     *
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editBack(Request $request,$id)
+    {
+        $this->authorize('create',News::class);
+        // return redirect()->route('news.edit.back')->withInput();
+        return view('pages.panel-news-edit',[
+            'news'=>null,
+            'edit'=>'true',
+            'news_id'=>$id,
         ]);
     }
 
@@ -101,10 +116,10 @@ class NewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(NewsRequest $request, News $news)
+    public function update(NewsRequest $request, $id)
     {
-        $this->authorize('update',$news);
-
+        $this->authorize('create',News::class);
+        $news  = News::where('id',$id)->first();
         return  $news->update($request->validated())
             ? redirect()->route('news')->withErrors(['sucess'=>'News '.$news->title.' update.'])
             : redirect()->route('news')->withErrors(['update_error'=>'News '.$news->title.' update error!.']);
@@ -143,6 +158,6 @@ class NewsController extends Controller
 
         $news->delete();
 
-        return back()->withErrors(['sucess'=>'News: '.$newsTitle.' author: '.$newsAuthor.' deleted.']);
+        return back()->withErrors(['sucess'=>'News: '.$newsTitle.' author: '.$newsAuthor.' DELETED.']);
     }
 }

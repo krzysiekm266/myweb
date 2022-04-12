@@ -3,7 +3,7 @@
     <!-- Navigation Links -->
     @auth
     <div class="hidden   sm:-my-0.5 sm:ml-10 sm:flex">
-        <x-nav-link :href="route('panel')" :active="request()->is('panel*')">
+        <x-nav-link :href="route('panel.index')" :active="request()->is('panel*')">
             {{ __('Administrator panel') }}
         </x-nav-link>
     </div>

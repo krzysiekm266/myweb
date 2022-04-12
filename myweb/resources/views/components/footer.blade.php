@@ -12,7 +12,7 @@
 
         @auth
         <div class="">
-            <x-footer-nav-link :href="route('panel')" :active="request()->is('panel*')" class="text-xs">
+            <x-footer-nav-link :href="route('panel.index')" :active="request()->is('panel*')" class="text-xs">
                 {{ __('Administrator panel') }}
             </x-footer-nav-link>
         </div>

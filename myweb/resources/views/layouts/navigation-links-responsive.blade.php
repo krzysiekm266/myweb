@@ -2,7 +2,7 @@
     <!-- Responsive navigation links -->
     @auth
     <div class="sm:hidden w-full">
-        <x-responsive-nav-link :href="route('panel')" :active="request()->is('panel*')">
+        <x-responsive-nav-link :href="route('panel.index')" :active="request()->is('panel*')">
             {{ __('Administrator panel') }}
         </x-responsive-nav-link>
     </div>

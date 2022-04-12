@@ -7,12 +7,12 @@ Route::group(
     [
         'middleware'=>'auth',
         'prefix'=>'panel',
-        'as'=>'panel',
+        'as'=>'panel.',
 
     ],
     function () {
-        Route::get('/', [PanelController::class,'index']);
-        Route::get('profile', [PanelController::class,'profile'])->name('.profile');
+        Route::get('/', [PanelController::class,'index'])->name('index');
+        Route::get('profile', [PanelController::class,'profile'])->name('profile');
     }
  );
 
