@@ -3,12 +3,13 @@
 
 
 @endphp
-<div class="flex flex-row items-center bg-gray-100 w-auto ">
+<div class="flex flex-row items-center bg-gray-100 w-auto rounded-md">
     {{-- <img src="{{ asset('storage/images/icon-project.png') }}" alt="" class="  w-20 h-20 absolute top-0 left-2"> --}}
 
-    <div class="h-auto p-2 pl-24 m-2 w-max-content border-b border-black w-full  relative ">
+    <div class="h-auto p-2 pl-24 m-2 w-max-content  w-full  relative ">
 
-        <img src="{{ asset('storage/images/icon-project.png') }}" alt="" class="  w-20 h-20 absolute top-0 left-0">
+        {{-- <img src="{{ asset('storage/images/icon-project.png') }}" alt="" class="  w-20 h-20 absolute top-0 left-0"> --}}
+        <img src="{{ asset('storage/images/business-document-file-svgrepo-com.svg') }}" alt="" class="  w-20 h-20 absolute top-0 left-0">
 
         <h1 class="h-auto mb-4 text-xl font-semibold">
             {{Str::ucfirst($project?->name)  ?? ' default project title'}}
@@ -36,4 +37,6 @@
         @endcan
 
     </div>
+
 </div>
+<hr class="m-2 w-auto h-0 bg-black justify-center">
