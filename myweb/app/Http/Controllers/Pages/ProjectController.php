@@ -95,7 +95,7 @@ class ProjectController extends Controller
         $projectAuthor = $project->user->name;
         $projectName = $project->name;
 
-        return  $project->delete() ? back()->withErrors(['sucess'=>'Project: '.$projectName.'author: '.$projectAuthor.' deleted.'])
-                                    :  back()->withErrors(['error'=>'Project: '.$projectName.'author: '.$projectAuthor.' cant be deleted!.']) ;
+        return  $project->delete() ? back()->withErrors(['sucess'=>'Project: '.$projectName.' author: '.$projectAuthor.' deleted.'])
+                                    :  back()->withErrors(['error'=>'Project: '.$projectName.' author: '.$projectAuthor.' cant be deleted!.']) ;
     }
 }
