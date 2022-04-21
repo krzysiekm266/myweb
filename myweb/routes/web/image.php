@@ -13,8 +13,8 @@ Route::group(
         'as' => 'image.',
     ],
     function (){
-        Route::patch('/', [ImageController::class,'create'])->name('create');
-        Route::post('/', [ImageController::class,'create'])->name('create');
+        Route::patch('/', [ImageController::class,'index'])->name('index');
+        Route::post('/', [ImageController::class,'index'])->name('index');
         Route::post('/select', [ImageController::class,'select'])->name('select');
         Route::post('/confirm', [ImageController::class,'selectConfirm'])->name('confirm');
         // Route::get('/confirm', [ImageController::class,'selectConfirm'])->name('confirm');

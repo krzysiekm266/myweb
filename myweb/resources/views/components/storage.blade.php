@@ -22,7 +22,7 @@
                 </form>
 
 
-                <form action="{{ route('image.create') }}" method="POST" class="flex flex-col {{ $select ?: ' hidden'; }}">
+                <form action="{{ route('image.index') }}" method="POST" class="flex flex-col {{ $select ?: ' hidden'; }}">
                     @csrf
 
                     <x-input class="  mb-4 w-max-content" type="text" name="title" id="news-title"

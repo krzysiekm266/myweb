@@ -9,7 +9,7 @@
                 <!-- Logo -->
                 <div class=" flex items-center ">
                     <a href="{{ route('index') }}">
-                        <x-application-logo class="block h-10 w-10 fill-current text-gray-500 hover:text-green-500"
+                        <x-application-logo class="block h-12 w-12 fill-current text-gray-500 hover:text-green-500"
                                 :active="request()->is('/')" />
                     </a>
                 </div>

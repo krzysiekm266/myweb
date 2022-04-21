@@ -19,7 +19,6 @@
             <div class="bg-gray-100 ">
                 <x-auth-validation-errors class="m-4" :errors="$errors"/>
                 <x-content-layout class=" p-2">
-                    <x-single-project />
 
                     @isset($allProjects)
                       @foreach ($allProjects as $project)

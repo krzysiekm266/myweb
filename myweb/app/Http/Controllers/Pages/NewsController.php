@@ -60,7 +60,7 @@ class NewsController extends Controller
 
         News::create( $request->validated())->save();
 
-        $request->registerImage();
+       // $request->registerImage();
 
         return redirect()->route('news.create')->withErrors(['sucess'=>'News '.$request->input('title').' create.']);
     }
@@ -141,23 +141,24 @@ class NewsController extends Controller
         $newsAuthor= $news->user->name;
         $newsTitle = $news->title;
 
-        $img = Image::where('path',$news->img_path)->first() ?? null;
-        if($img?->counter == 1)
-        {
-            $img->delete();
-        }
-        elseif($img != null)
-        {
-            $img->counter--;
-            $img->save();
-        }
-        else
-        {
-            return back()->withErrors(['error_img_not_register'=>'I cant delete this news. Image path is not registered']);
-        }
+        // $img = Image::where('path',$news->img_path)->first() ?? null;
+        // if($img?->counter == 1)
+        // {
+        //     $img->delete();
+        // }
+        // elseif($img != null)
+        // {
+        //     $img->counter--;
+        //     $img->save();
+        // }
+        // else
+        // {
+        //     return back()->withErrors(['error_img_not_register'=>'I cant delete this news. Image path is not registered']);
+        // }
 
         $news->delete();
 
-        return back()->withErrors(['sucess'=>'News: '.$newsTitle.' author: '.$newsAuthor.' DELETED.']);
+        return back()->withErrors(['sucess'=>'News: '.$newsTitle.' DELETED by'.' author: '.$newsAuthor]);
+
     }
 }

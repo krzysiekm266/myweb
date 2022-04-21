@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\News;
+use App\Models\Project;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Storage;
 
-class NewsFactory extends Factory
+class ProjectFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = News::class;
+    protected $model = Project::class;
+
     /**
      * Define the model's default state.
      *
@@ -22,11 +22,12 @@ class NewsFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->unique()->title(),
-            'body' => $this->faker->paragraph(),
-            'img_path' => array_rand(Storage::allFiles('images'),1),
+            'name' => $this->faker->unique()->title(),
+            'description' => $this->faker->paragraph(),
+            'link' =>$this->faker->url() ,
             'user_id' => 1,
             'created_at' => now(),
+
         ];
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorageRequest;
+use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -105,15 +106,23 @@ class StorageController extends Controller
         // do przetestowania
         if(Storage::exists($path))
         {
-            Storage::delete([$path]);
+            $imgCount = News::where('img_path',$path)->count();
+            if($imgCount==0)
+            {
+                Storage::delete([$path]);
 
-            return redirect()->route('storage.create')
-                            ->withErrors(['sucess'=>' Image '.$path.' deleted.']);
+                return redirect()->route('storage.create')->withErrors(['sucess'=>' Image '.$path.' deleted.']);
+            }
+            else
+            {
+                return redirect()->route('storage.create')->withErrors(['img_used'=>' Image '.$path.' is used by .'.$imgCount.' News!']);
+            }
+
+
         }
         else
         {
-            return redirect()->route('storage.create')
-                            ->withErrors(['file_error'=>' Image '.$path.' doesnt  exist.']);
+            return redirect()->route('storage.create')->withErrors(['file_error'=>' Image '.$path.' doesnt  exist.']);
         }
     }
 }

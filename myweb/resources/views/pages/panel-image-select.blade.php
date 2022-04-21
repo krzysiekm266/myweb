@@ -16,8 +16,8 @@
 
             <x-input class=" " type="text" name="img_path"   value="{{  request()->input('img_path') }} " hidden/>
             <x-input class=" " type="number" name="user_id"  value="{{  request()->input('user_id')  }}" hidden />
-            <x-input class=" " type="number" name="news_id"  value="{{  request()->input('news_id')  }}"  />
-            <x-input class=" " type="text" name="edit"  value="{{  request()->input('edit') }}"  />
+            <x-input class=" " type="number" name="news_id"  value="{{  request()->input('news_id')  }}"  hidden/>
+            <x-input class=" " type="text" name="edit"  value="{{  request()->input('edit') }}"  hidden/>
 
             <x-button id="confirm-button" class=" w-40 h-40  m-2  self-center ">
                 {{ __('Confirm ') }}

@@ -41,7 +41,7 @@
                             <img id="img-preview" name="img_preview" src="{{ asset( $img_path ?? old('img_path')) }}" alt="" class="w-40 h-40 ">
                         </div>
 
-                        <x-button id="select-image-button" formaction="{{ route('image.create') }}" formmethod="POST"  class=" w-3/4 mx-auto my-2 h-12">
+                        <x-button id="select-image-button" formaction="{{ route('image.index') }}" formmethod="POST"  class=" w-3/4 mx-auto my-2 h-12">
                             {{ __('Select image...') }}
                         </x-button>
                         <x-label for="title" class="w-max-content " >

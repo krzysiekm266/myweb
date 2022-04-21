@@ -48,7 +48,7 @@ $pTitle="News Editor";
 
                     </div>
 
-                    <x-button id="select-image-button" formaction="{{ route('image.create') }}" formmethod="POST"  class=" w-3/4 mx-auto my-2 h-12">
+                    <x-button id="select-image-button" formaction="{{ route('image.index') }}" formmethod="POST"  class=" w-3/4 mx-auto my-2 h-12">
                         {{ __('Select image...') }}
                     </x-button>
 
@@ -73,12 +73,12 @@ $pTitle="News Editor";
                         {{ __('Update News') }}
                     </x-button>
 
-                    <x-input class=" " type="number" name="news_id"  value="{{ old('news_id') ?? $news?->id ?? request()->input('news_id')}}" />
+                    <x-input class=" " type="number" name="news_id"  value="{{ old('news_id') ?? $news?->id ?? request()->input('news_id')}}" hidden />
 
 
-                    <x-input class="" type="text" name="img_path" id="update-img-path"  value="{{ old('img_path') ?? $news?->img_path ?? request()->input('img_path')}}" />
-                    <x-input class=" " type="number" name="user_id" id="update-user-id" value="{{ Auth::user()->id ?? request()->input('user_id')}} " />
-                    <x-input class=" " type="text" name="edit"  value="{{ $edit ?? request()->input('edit')}} " />
+                    <x-input class="" type="text" name="img_path" id="update-img-path"  value="{{ old('img_path') ?? $news?->img_path ?? request()->input('img_path')}}" hidden/>
+                    <x-input class=" " type="number" name="user_id" id="update-user-id" value="{{ Auth::user()->id ?? request()->input('user_id')}} " hidden/>
+                    <x-input class=" " type="text" name="edit"  value="{{ $edit ?? request()->input('edit')}} " hidden/>
 
                 </div>
 

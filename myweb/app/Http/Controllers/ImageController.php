@@ -15,17 +15,7 @@ class ImageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create(Request $request)
+    public function index(Request $request)
     {
         return view('pages.panel-image-select',[
             'edit'=>$request->input('edit'),
@@ -33,6 +23,20 @@ class ImageController extends Controller
 
         ]);
     }
+
+    // /**
+    //  * Show the form for creating a new resource.
+    //  *
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function create(Request $request)
+    // {
+    //     return view('pages.panel-image-select',[
+    //         'edit'=>$request->input('edit'),
+    //         'images' => Storage::files('images'),
+
+    //     ]);
+    // }
 
     /**
      * Store a newly created resource in storage.

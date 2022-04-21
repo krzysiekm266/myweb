@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 class News extends Model
 {
     use HasFactory,  Notifiable;
+
     public $timestamps = true;
     /**
      * The attributes that are mass assignable.
@@ -24,14 +25,7 @@ class News extends Model
 
 
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+
 
     public function user()
     {

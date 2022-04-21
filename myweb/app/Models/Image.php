@@ -11,6 +11,6 @@ class Image extends Model
 
     protected $fillable = [
         'path',
-        'counter'
+        // 'counter'
     ];
 }
