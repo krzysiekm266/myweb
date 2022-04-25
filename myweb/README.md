@@ -1,6 +1,6 @@
 Projekt utworzony za pomocą  Laravel jest on dadatkiem do mojego CV..
 Wykorzystuje Laravel Breeze(dostosowany do potrzeb projektu).
-Założeniem projektu jest że: 
+Założeniem projektu jest : 
 -użytkownicy mają dostęp do strony(oprócz panelu administratora) bez potrzeby logowania
 -w bazie danych jest jeden uzytkownik : administrator
 -admistrator zarzadza zawartoscią zakładek
