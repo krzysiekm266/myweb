@@ -10,3 +10,8 @@ z zakładki news(przyciski widoczne tylko dla administratora).<br>
 -administrator ma przypisną role: administrator(relacja eloquent many to many ),<br>
 nie jest to konieczne przy jednym uzytkowniku ale zostało dodane jako część CV.<br>
 -wszystkie żądania do servera wykonywane przez daministratora są zbezpieczone od strony frontend jak i backend(policies,gates).<br>
+
+## Screenshots from dev version 
+<br>
+![Screen](/myweb/screenshots/myweb1.png "Screen") <br>
+![Screen](/myweb/screenshots/myweb2.png "Screen") <br>
